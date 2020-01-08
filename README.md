@@ -8,19 +8,26 @@
 |given_name|string|null: false|
 |family_name_kana|string|null: false|
 |given_name_kana|string|null: false|
-|birth_date|DATE|null: false|
+|birth_date|date|null: false|
 |cellphone|string|null: false|
-|post_code|string|
-|prefecture|string|
-|address|string|
-|block_number|string|
-|building|string|
-|point|INT|
+|point|integer|
 ### Association
 - has_many :shipping_addresses
-- belongs_to :point
 - has_many :items
-- belongs_to :credit_cards
+- has_one :credit_cards
+- has_one :address
+- has_many :likes
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|post_code|string|
+|prefecture|string|
+|city|string|
+|block_number|string|
+|building|string|
+### Association
+- belongs_to :user
 
 ## shipping_addressesテーブル
 |Column|Type|Options|
@@ -35,18 +42,18 @@
 |block_number|string|null: false|
 |building|string|
 |telephone|string|
-|user_id|INT|null: false,foreign_key: true|
+|user_id|integer|null: false,foreign_key: true|
 ### Association
 - belongs_to :user
 
 ## credit_cardsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|number|INT|null: false|
-|month|INT|null: false|
-|year|INT|null: false|
-|security_code|INT|null: false|
-|user_id|INT|null: false,foreign_key: true|
+|number|integer|null: false|
+|month|integer|null: false|
+|year|integer|null: false|
+|security_code|integer|null: false|
+|user_id|integer|null: false,foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -62,16 +69,16 @@
 ## comenntsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|text|TEXT|null: false|
-|item_id|INT|null: false, foreign_key: true|
-|user_id|INT|null: false, foreign_key: true|
+|text|text|null: false|
+|item_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
 
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|CHAR(40)|null: false|
+|name|string|null: false|
 |description|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |condition_id|integer|null: false, foreign_key: true|
@@ -92,7 +99,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |burden|string|null: false|
-|days|INT|null: false|
+|days|integer|null: false|
 |prefecture|string|null: false|
 |item_id|integer|null: false, foreign_key: true|
 ### Association
