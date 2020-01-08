@@ -16,7 +16,6 @@
 |block_number|VARCHAR|
 |building|VARCHAR|
 |point|INT|
-
 ### Association
 belongs_to :shipping_address
 belongs_to :point
