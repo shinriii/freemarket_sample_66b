@@ -1,43 +1,43 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|nickname|VARCHAR|null: false|
-|mail|VARCHAR|null: false,unique:true|
-|password|VARCHAR|null: false,unique:true|
-|family_name|VARCHAR|null: false|
-|given_name|VARCHAR|null: false|
-|family_name_kana|VARCHAR|null: false|
-|given_name_kana|VARCHAR|null: false|
+|nickname|string|null: false|
+|mail|string|null: false,unique:true|
+|password|string|null: false,unique:true|
+|family_name|string|null: false|
+|given_name|string|null: false|
+|family_name_kana|string|null: false|
+|given_name_kana|string|null: false|
 |birth_date|DATE|null: false|
-|cellphone|VARCHAR|null: false|
-|post_code|CHAR|
-|prefecture|VARCHAR|
-|address|VARCHAR|
-|block_number|VARCHAR|
-|building|VARCHAR|
+|cellphone|string|null: false|
+|post_code|string|
+|prefecture|string|
+|address|string|
+|block_number|string|
+|building|string|
 |point|INT|
 ### Association
-belongs_to :shipping_address
-belongs_to :point
-belongs_to :item
-belongs_to :credit_card
+- has_many :shipping_addresses
+- belongs_to :point
+- has_many :items
+- belongs_to :credit_cards
 
 ## shipping_addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|family_name|VARCHAR|null: false|
-|given_name|VARCHAR|null: false|
-|family_name_kana|VARCHAR|null: false|
-|given_name_kana|VARCHAR|null: false|
-|post_code|CHAR|null: false|
-|prefecture|VARCHAR|null: false|
-|address|VARCHAR|null: false|
-|block_number|VARCHAR|null: false|
-|building|VARCHAR|
-|telephone|VARCHAR|
+|family_name|string|null: false|
+|given_name|string|null: false|
+|family_name_kana|string|null: false|
+|given_name_kana|string|null: false|
+|post_code|string|null: false|
+|prefecture|string|null: false|
+|address|string|null: false|
+|block_number|string|null: false|
+|building|string|
+|telephone|string|
 |user_id|INT|null: false,foreign_key: true|
 ### Association
-belongs_to :user
+- belongs_to :user
 
 ## credit_cardsテーブル
 |Column|Type|Options|
@@ -48,7 +48,7 @@ belongs_to :user
 |security_code|INT|null: false|
 |user_id|INT|null: false,foreign_key: true|
 ### Association
-has_many :users
+- belongs_to :user
 
 ## likesテーブル
 |Column|Type|Options|
@@ -56,8 +56,8 @@ has_many :users
 |user_id|null: false,foreign_key: true|
 |item_id|null: false,foreign_key: true|
 ### Association
-belongs_to :user
-belongs_to :item
+- belongs_to :user
+- belongs_to :item
 
 ## comenntsテーブル
 |Column|Type|Options|
@@ -72,14 +72,18 @@ belongs_to :item
 |Column|Type|Options|
 |------|----|-------|
 |name|CHAR(40)|null: false|
-|description|VARCHAR|null: false|
+|description|string|null: false|
 |user_id|integer|null: false, foreign_key: true|
+|condition_id|integer|null: false, foreign_key: true|
+|brand_id|integer|null: false, foreign_key: true|
+|size_id|integer|null: false, foreign_key: true|
+|category_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :category
 - belongs_to :condition
 - belongs_to :deli-info
 - belongs_to :brand
-- has_many :users
+- belongs_to :users
 - has_many :likes
 - has_many :comments
 - has_many :images
@@ -87,9 +91,9 @@ belongs_to :item
 ## deli-infoテーブル
 |Column|Type|Options|
 |------|----|-------|
-|burden|VARCHAR|null: false|
+|burden|string|null: false|
 |days|INT|null: false|
-|prefecture|VARCHAR|null: false|
+|prefecture|string|null: false|
 |item_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
@@ -97,7 +101,7 @@ belongs_to :item
 ## imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|url|VARCHAR|null: false|
+|url|string|null: false|
 |item_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
@@ -105,24 +109,22 @@ belongs_to :item
 ## conditionsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|level|VARCHAR|null: false|
-|item_id|integer|null: false, foreign_key: true|
+|level|string|null: false|
+|condition_id|integer|null: false, foreign_key: true|
 ### Association
 - has_many :items
 
 ## brandsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|VARCHAR|
-|item_id|integer|null: false, foreign_key: true|
+|name|string|
 ### Association
 - has_many :items
 
 ## sizesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|value|VARCHAR|null: false|
-|item_id|integer|null: false, foreign_key: true|
+|value|string|null: false|
 ### Association
 - has_many :items
 
@@ -130,7 +132,6 @@ belongs_to :item
 |Column|Type|Options|
 |------|----|-------|
 |path|
-|name|VARCHAR|null: false|
-|item_id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 ### Association
 - has_many :items
