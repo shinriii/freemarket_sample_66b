@@ -12,11 +12,12 @@
 |cellphone|string|null: false|
 |point|integer|
 ### Association
-- has_many :shipping_addresses
-- has_many :items
-- has_one :credit_card
-- has_one :address
-- has_many :likes
+- has_many :shipping_addresses, dependent: :destroy
+- has_many :items, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_one :credit_card, dependent: :destroy
+- has_one :address, dependent: :destroy
+- has_many :likes, dependent: :destroy
 
 ## addressテーブル
 |Column|Type|Options|
@@ -89,15 +90,15 @@
 |size_id|integer|null: false, foreign_key: true|
 |category_id|integer|null: false, foreign_key: true|
 ### Association
-- belongs_to :category
-- belongs_to :condition
-- has_one :deli_info
-- belongs_to :brand
+- belongs_to :category, dependent: :destroy
+- belongs_to :condition, dependent: :destroy
+- has_one :deli_info, dependent: :destroy
+- belongs_to :brand, dependent: :destroy
 - belongs_to :user
-- belongs_to :size
-- has_many :likes
-- has_many :comments
-- has_many :images
+- belongs_to :size, dependent: :destroy
+- has_many :likes, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :images, dependent: :destroy
 
 ## deli_infoテーブル
 |Column|Type|Options|
