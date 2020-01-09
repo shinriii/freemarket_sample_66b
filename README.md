@@ -14,7 +14,7 @@
 ### Association
 - has_many :shipping_addresses
 - has_many :items
-- has_one :credit_cards
+- has_one :credit_card
 - has_one :address
 - has_many :likes
 
@@ -26,6 +26,7 @@
 |city|string|
 |block_number|string|
 |building|string|
+|user_id|integer|null: false,foreign_key: true|
 ### Association
 - belongs_to :user
 
@@ -89,14 +90,15 @@
 ### Association
 - belongs_to :category
 - belongs_to :condition
-- belongs_to :deli-info
+- has_one :deli_info
 - belongs_to :brand
-- belongs_to :users
+- belongs_to :user
+- belongs_to :size
 - has_many :likes
 - has_many :comments
 - has_many :images
 
-## deli-infoテーブル
+## deli_infoテーブル
 |Column|Type|Options|
 |------|----|-------|
 |burden|string|null: false|
