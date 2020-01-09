@@ -82,6 +82,7 @@
 |------|----|-------|
 |name|string|null: false|
 |description|string|null: false|
+|price|integer|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |condition_id|integer|null: false, foreign_key: true|
 |brand_id|integer|null: false, foreign_key: true|
