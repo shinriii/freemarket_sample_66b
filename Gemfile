@@ -62,6 +62,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'carrierwave'
 gem 'fog-aws'
+gem 'pry-rails'
+gem 'bootsnap'
+gem 'rack', '~> 2.0.8'
 
 group :production do
   gem 'unicorn', '5.4.1'
