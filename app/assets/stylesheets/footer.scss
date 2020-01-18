@@ -8,13 +8,6 @@
     position: relative;
     color: #fff;
   
-    .aa {
-      color: white;
-      font-size: 11px;
-      opacity: .7;
-      list-style: none;
-    }
-  
     &__top {
       margin: 0px 190px;
       width: 1020px;
@@ -39,7 +32,12 @@
           }
           &__list {
             list-style: none;
-            
+            &__info{
+              color: white;
+              font-size: 11px;
+              opacity: .7;
+              list-style: none;
+            }
           }
         }
     
