@@ -6,8 +6,8 @@
       %h3.contents__footer__box__sentence__message 今すぐ無料ダウンロード！
       .contents__footer__box__sentence__app-links
         = image_tag "/logo_red.svg", class:"contents__footer__box__sentence__app-links__logo", width: "80", height: "80"
-        %a.contents__footer__box__sentence__app-links__apple{href: "https://apps.apple.com/jp/app/id667861049?l=ja"}
+        = link_to 'https://apps.apple.com/jp/app/id667861049?l=ja', class: 'contents__footer__box__sentence__app-links__apple' do
           = image_tag "/apple.svg",class:'contents__footer__box__sentence__app-links__apple__img"', width: "150", height: "50"
-        %a.contents__footer__box__sentence__app-links__google{href: "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"}
+        = link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: 'contents__footer__box__sentence__app-links__google' do
           = image_tag "/google.svg",class:'contents__footer__box__sentence__app-links__link-google__img', width: "150", height: "50"
     = image_tag "/smartphone2.png", class:'contents__footer__box__smartphone',height: "260"

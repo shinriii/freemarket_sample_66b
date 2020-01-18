@@ -607,9 +607,10 @@
     .header__bottom__right
       %ul.header__bottom__right__signup
         %li
-          %a.header__bottom__right__signup__new.btn-red{href: "/"} 新規会員登録
+          = link_to '新規会員登録', '#', class: 'header__bottom__right__signup__new'
         %li
-          %a.header__bottom__right__signup__login.header-login{href: "/"} ログイン
+          = link_to 'ログイン', '#', class: 'header__bottom__right__signup__login'
+
 
       -# ログインができた時に以下を表示する
     -# .header__bottom__right
