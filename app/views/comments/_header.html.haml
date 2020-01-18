@@ -3,7 +3,7 @@
     .header__top__logo
       .header__top__logo__last
         = link_to "#" do
-          %img{alt: "fmarket", src:"fmarket_logo_red.svg", class:"image"}
+          = image_tag "/fmarket_logo_red.svg",alt: "fmarket",class:"image"
 
       %form.header__top__logo__form{action: "search"}
         %input.header__top__logo__form__input{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}
@@ -630,7 +630,7 @@
     -#         やることリスト
     -#   = link_to "#" do
     -#     .header__bottom__right__mypage
-    -#       %img{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "32", class:"img"}
+    -#       = image_tag, alt: "", "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "32", class:"img"
     -#       .header__bottom__right__mypage__text
     -#         マイページ
 

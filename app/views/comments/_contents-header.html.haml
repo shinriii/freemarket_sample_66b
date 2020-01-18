@@ -1,5 +1,5 @@
 .contents__header
-  %img.contents__header__img{src: "assets/baner1.jpg"}/
+  = image_tag "/baner1.jpg",class:'contents__header__img'
   .contents__header__box
     .contents__header__box__sentence
       %h3.contents__header__box__sentence__title スマホでかんたん
@@ -8,7 +8,7 @@
       %p.contents__header__box__sentence__explain 購入時も安心な独自システムのアプリです
       .contents__header__box__sentence__app-links
         %a.contents__header__box__sentence__app-links__link-apple{href: "https://apps.apple.com/jp/app/id667861049?l=ja"}
-          = image_tag "apple.svg",class:'contents__header__box__sentence__app-links__apple__img', width: "150", height: "50"
+          = image_tag "/apple.svg",class:'contents__header__box__sentence__app-links__apple__img', width: "150", height: "50"
         %a.contents__header__box__sentence__app-links__link-google{href: "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja"}
-          = image_tag "google.svg",class:'contents__header__box__sentence__app-links__link-google__img', width: "150", height: "50"
-    %img.contents__header__box__smartphone{height:"390", src: "assets/smartphone.png"}/
+          = image_tag "/google.svg",class:'contents__header__box__sentence__app-links__link-google__img', width: "150", height: "50"
+    = image_tag "/smartphone.png",class:'contents__header__box__smartphone',height:"390"
