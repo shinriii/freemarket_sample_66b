@@ -1,0 +1,637 @@
+.header
+  .header__top
+    .header__top__logo
+      .header__top__logo__last
+        = link_to "#" do
+          %img{alt: "fmarket", src:"fmarket_logo_red.svg", class:"image"}
+
+      %form.header__top__logo__form{action: "search"}
+        %input.header__top__logo__form__input{name: "keyword", placeholder: "何かお探しですか？", type: "search", value: ""}
+        %button
+          %i.fas.fa-search{height: "14", width: "14"}
+    
+
+  .header__bottom
+    .header__bottom__left
+      = link_to "#", class:"color" do
+        .header__bottom__left__categorie
+          %i.fas.fa-list-ul
+          .header__bottom__left__categorie__text
+            カテゴリーから探す
+          %ul.header__bottom__left__categorie__search
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                レディース
+              %ul.header__bottom__left__categorie__search__parent__children
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    トップス 
+                  %ul.header__bottom__left__categorie__search__parent__children__child__grandson
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        Tシャツ/カットソー(半袖/袖なし)
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        Tシャツ/カットソー(七分/長袖)
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        シャツ/ブラウス(半袖/袖なし)
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        シャツ/ブラウス(七分/長袖)
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        ポロシャツ
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        キャミソール
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        タンクトップ
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        ホルターネック
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        ニット/セーター
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        チュニック
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        カーディガン/ボレロ
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        アンサンブル
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        ベスト/ジレ
+                    %li
+                      = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                        パーカー
+                  %li
+                    = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                      ジャケット/アウター
+                    %ul.header__bottom__left__categorie__search__parent__children__child__grandson
+                      %li
+                        = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                          テーラードジャケット
+                      %li
+                        = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                          ノーカラージャケット
+                      %li
+                        = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                          Gジャン/デニムジャケット
+                      %li
+                        = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                          レザージャケット
+                      %li
+                        = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                          ライダースジャケット
+                      %li
+                        = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                          ミリタリージャケット
+                      %li
+                        = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                          ダウンベスト
+                      %li
+                        = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                          ジャンパー/ブルゾン
+                      %li
+                        = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                          ポンチョ
+                      %li
+                        = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                          ロングコート
+                      %li
+                        = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                          トレンチコート
+                      %li
+                        = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                          ダッフルコート
+                      %li
+                        = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child__grandson__grandchild" do
+                          ピーコート
+                  %li
+                    = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                      パンツ
+                  %li
+                    = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                      スカート
+                  %li
+                    = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                      ワンピース
+                  %li
+                    = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                      靴
+                  %li
+                    = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                      ルームウェア/パジャマ
+                  %li
+                    = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                      レッグウェア
+                  %li
+                    = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                      帽子
+                  %li
+                    = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                      バッグ
+                  %li
+                    = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                      アクセサリー
+                  %li
+                    = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                      ヘアアクセサリー
+                  %li
+                    = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                      小物
+                  %li
+                    = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                      時計
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                メンズ
+              %ul.header__bottom__left__categorie__search__parent__children
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    トップス 
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ジャケット/アウター
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    パンツ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    靴
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    バッグ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    スーツ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    帽子
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    アクセサリー
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    小物
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    時計
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    水着
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    レッグウェア
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    アンダーウェア
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    その他
+                
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                ベビー・キッズ
+              %ul.header__bottom__left__categorie__search__parent__children
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ベビー服(女の子)~95cm
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ベビー服(男の子)~95cm
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ベビー服(男女兼用)~95cm
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    キッズ服(女の子)100cm~
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    キッズ服(男の子)100cm~
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    キッズ服(男女兼用)100cm~
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    キッズ靴
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    子ども用ファッション小物
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    おむつ/トイレ/バス
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    外出/移動用品
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    授乳/食事
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ベビー家具/寝具/室内用品
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    おもちゃ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    行事/記念品
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                インテリア・住まい・小物
+              %ul.header__bottom__left__categorie__search__parent__children
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    キッチン/食器
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ベッド/マットレス
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ソファ/ソファベッド
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    椅子/チェア
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    机/テーブル
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    収納家具
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ラグ/カーペット/マット
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    カーテン/ブラインド
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ライト/照明
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    寝具
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    インテリア小物
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    季節/年中行事
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    その他
+
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                本・音楽・ゲーム
+              %ul.header__bottom__left__categorie__search__parent__children
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    本
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    漫画
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    雑誌
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    CD
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    DVD/ブルーレイ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    レコード
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    テレビゲーム
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                おもちゃ・ホビー・グッズ
+              %ul.header__bottom__left__categorie__search__parent__children
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    おもちゃ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    タレントグッズ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    コミック/アニメグッズ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    トレーディングカード
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    フィギュア
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    楽器/器材
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    コレクション
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ミリタリー
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    美術品
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    アート用品
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    その他
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                コスメ・香水・美容
+              %ul.header__bottom__left__categorie__search__parent__children
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ベースメイク
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    メイクアップ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ネイルケア
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    香水
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    スキンケア/基礎化粧品
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ヘアケア
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ボディケア
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    オーラルケア
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    リラクゼーション
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ダイエット
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    その他
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                家電・スマホ・カメラ
+              %ul.header__bottom__left__categorie__search__parent__children
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    スマートフォン/携帯電話
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    スマホアクセサリー
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    PC/タブレット
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    カメラ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    テレビ/映像機器
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    オーディオ機器
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    美容/健康
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    冷暖房/空調
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    生活家電
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    その他
+
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                スポーツ・レジャー
+              %ul.header__bottom__left__categorie__search__parent__children
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ゴルフ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    フィッシング
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    自転車
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    トレーニング/エクササイズ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    野球
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    サッカー/フットサル
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    テニス
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    スノーボード
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    スキー
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    その他スポーツ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    アウトドア
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    その他
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                ハンドメイド
+              %ul.header__bottom__left__categorie__search__parent__children
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    アクセサリー(女性用)
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ファッション/小物
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    アクセサリー/時計
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    日用品/インテリア
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    趣味/おもちゃ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    キッズ/ベビー
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    素材/材料
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    二次創作物
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    その他
+                
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                チケット
+              %ul.header__bottom__left__categorie__search__parent__children
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    音楽
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    スポーツ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    演劇/芸能
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    イベント
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    映画
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    施設利用券
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    優待券/割引券
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    その他
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                自転車・オートバイ
+              %ul.header__bottom__left__categorie__search__parent__children
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    自動車本体
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    自動車タイヤ/ホイール
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    自動車パーツ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    自動車アクセサリー
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    オートバイ車体
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    オートバイパーツ
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    オートバイアクセサリー
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                その他
+              %ul.header__bottom__left__categorie__search__parent__children
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    まとめ売り
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    ペット用品
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    食品
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    飲料/酒
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    日用品/生活雑貨/旅行
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    アンティーク/コレクション
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    文房具/事務用品
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    事務/店舗用品
+                %li
+                  = link_to "#",class:"header__bottom__left__categorie__search__parent__children__child" do
+                    その他
+            %li
+              = link_to "#",class:"header__bottom__left__categorie__search__parent" do
+                カテゴリー一覧
+              
+        .header__bottom__left__brand
+          %i.fas.fa-tag
+            = link_to "#",class:"aaa" do
+              .header__bottom__left__brand__text
+                ブランドから探す
+            %ul.header__bottom__left__brand__search
+              %li
+                = link_to "#",class:"header__bottom__left__brand__search__parent" do
+                  シャネル
+              %li
+                = link_to "#",class:"header__bottom__left__brand__search__parent" do
+                  ナイキ
+              %li
+                = link_to "#",class:"header__bottom__left__brand__search__parent" do
+                  ルイ・ヴィトン
+              %li
+                = link_to "#",class:"header__bottom__left__brand__search__parent" do
+                  シュプリーム
+              %li
+                = link_to "#",class:"header__bottom__left__brand__search__parent" do
+                  アディダス
+              %li
+                = link_to "#",class:"header__bottom__left__brand__search__parent" do
+                  ブランド一覧
+    
+              
+            
+    .header__bottom__right
+      = link_to "#" do
+        .header__bottom__right__like
+          %i.far.fa-heart
+          .header__bottom__right__like__text
+            いいね！一覧
+      = link_to "#" do
+        .header__bottom__right__bell
+          %i.far.fa-bell
+          .header__bottom__right__bell__text
+            お知らせ
+      = link_to "#" do
+        .header__bottom__right__check
+          %i.fas.fa-check
+          .header__bottom__right__check__text
+            やることリスト
+      = link_to "#" do
+        .header__bottom__right__mypage
+          %img{alt: "", src: "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "32", class:"img"}
+          .header__bottom__right__mypage__text
+            マイページ
+
+
+    -# .header__bottom__right
+    -#   %ul.header__bottom__right__signup
+    -#     %li
+    -#       %a.header__bottom__right__signup__new.btn-red{href: "/"} 新規会員登録
+    -#     %li
+    -#       %a.header__bottom__right__signup__login.header-login{href: "/"} ログイン
