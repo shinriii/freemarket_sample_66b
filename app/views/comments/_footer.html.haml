@@ -1,0 +1,108 @@
+.footer
+  .footer__top
+    .footer__top__box
+      .footer__top__box__details
+        %h2.footer__top__box__details__title
+          メルカリについて
+        %ul.footer__top__box__details__list
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              会社概要（運営会社）
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              採用情報
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              プレスリリース
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              公式ブログ
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              メルカリロゴ利用ガイドライン
+        .iconbox  
+          .twitter
+            = link_to "https://twitter.com/mercari_jp" do
+              = icon('fab', 'twitter', class: "icon")  
+          .facebook  
+            = link_to "https://www.facebook.com/mercarijp" do
+              = icon('fab', 'facebook-square', class: "icon")
+      .footer__top__box__help
+        %h2.footer__top__box__help__title
+          ヘルプ＆ガイド
+        %ul.footer__top__box__help__list
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              メルカリガイド
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              らくらくメルカリ便
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              ゆうゆうメルカリ便
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              大型メルカリ便
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              車体取引ガイド
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              メルカリあんしん・あんぜん宣言！
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              偽ブランド品撲滅への取り組み
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              メルカリボックス
+    .footer__top__privacy
+      %h2.footer__top__privacy__title
+        プライバシーと利用規約
+      .footer__top__privacy__box
+        %ul.footer__top__privacy__box__list
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              プライバシーポリシー
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              メルカリ利用規約
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              あんしんスマホサポート制度に関する利用特約
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              コンプライアンスポリシー
+        %ul.footer__top__privacy__box__lists
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              個人データの安全管理に係る基本方針
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              特定商取引に関する表記
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              資金決済法に基づく表示
+          %li
+            = link_to "#", class: 'footer__top__box__details__list__info' do
+              法令順守と犯罪抑止のために
+    .footer__top__country
+      %h2.footer__top__country__title
+        国
+      %ul.footer__top__country__list
+        %li
+          = link_to "#", class: 'footer__top__box__details__list__info' do
+            日本
+        %li
+          = link_to "#", class: 'footer__top__box__details__list__info' do
+            United States
+  .footer__bottom
+    = link_to "#", class: 'bb' do
+      = image_tag "/logo_white.svg",width:"40",height:"40px"
+      Fmarket
+    .footer__bottom__center
+      © Fmarket,inc.
+
+      = link_to '#', class: 'sell-btn' do
+        .sell-btn__title
+          出品
+        %i.fas.fa-camera
