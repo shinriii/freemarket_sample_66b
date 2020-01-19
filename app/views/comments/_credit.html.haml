@@ -1,15 +1,15 @@
 .credit
   %nav.credit__nav
     %ul
-      %li{itemscope: "", itemscope: "#"}
-        %a{href: "#", itemscope: "url"}
+      %li
+        = link_to "#" do
           %span{itemscope: "title"} メルカリ
           %i.fas.fa-chevron-right
       %li{itemscope: "", itemscope: "#"}
-        %a{href: "#", itemscope: "url"}
+        = link_to "#" do
           %span{itemscope: "title"} マイページ
           %i.fas.fa-chevron-right
-      %li{itemscope: "", itemscope: "#", class: "payment"}
+      %li{class: "payment"}
         %span{itemscope: "title"} 支払い方法
   
   %main.credit__main
