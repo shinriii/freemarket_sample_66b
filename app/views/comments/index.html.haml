@@ -3,8 +3,8 @@
 
   .main-bar
     .main-bar__top-box
-      %a{href: "#"}
-        %img{class:"picture", src: "/assets/hito.png", height:"auto", width:"65",}
+      = link_to "#" do
+        = image_tag "/hito.png", class:"picture", height:"auto", width:"65"
         %p.user_name ひのとしひろ
       %p.user_info 評価数 0 出品数 0
     .main-bar__center-box
