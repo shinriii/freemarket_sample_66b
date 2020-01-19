@@ -73,4 +73,6 @@ end
 gem "aws-sdk-s3", require: false
 gem 'haml-rails'
 gem 'erb2haml'
+
 gem "font-awesome-rails"
+

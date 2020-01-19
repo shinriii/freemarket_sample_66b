@@ -1,0 +1,14 @@
+.contents__header
+  = image_tag "/baner1.jpg",class:'contents__header__img'
+  .contents__header__box
+    .contents__header__box__sentence
+      %h3.contents__header__box__sentence__title スマホでかんたん
+      %h3.contents__header__box__sentence__title フリマアプリ
+      %p.contents__header__box__sentence__explain メルカリはスマホカメラからすぐに出品できる
+      %p.contents__header__box__sentence__explain 購入時も安心な独自システムのアプリです
+      .contents__header__box__sentence__app-links
+        = link_to 'https://apps.apple.com/jp/app/id667861049?l=ja', class: 'contents__footer__box__sentence__app-links__apple' do
+          = image_tag "/apple.svg",class:'contents__header__box__sentence__app-links__apple__img', width: "150", height: "50"
+        = link_to 'https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja', class: 'contents__footer__box__sentence__app-links__google' do
+          = image_tag "/google.svg",class:'contents__header__box__sentence__app-links__link-google__img', width: "150", height: "50"
+    = image_tag "/smartphone.png",class:'contents__header__box__smartphone',height:"390"
