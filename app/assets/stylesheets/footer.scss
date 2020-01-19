@@ -1,0 +1,299 @@
+@media screen and (min-width:1050px) { 
+  .footer {
+    width: 100%;
+    height: 400px;
+    font-weight: 500;
+    background: #212121;
+    padding: 0 20px 10px 20px;
+    position: relative;
+    color: #fff;
+  
+    &__top {
+      margin: 0px 190px;
+      width: 1020px;
+      display: block;
+      position: absolute;
+      display: flex;
+      justify-content: space-around;
+
+      &__box {
+        display: flex;
+        &__details {
+          width: 200px;
+          height: 240px;
+          padding: 0 30px 0 0;
+          margin-top: 18px;
+          line-height: 1.5em;
+        
+          &__title {
+            font-weight: 500;
+            padding-bottom: 15px;
+            font-size: 15px;
+          }
+          &__list {
+            list-style: none;
+            &__info{
+              color: white;
+              font-size: 11px;
+              opacity: .7;
+              list-style: none;
+            }
+          }
+        }
+    
+        &__help {
+          width: 300px;
+          margin-top: 18px;
+          line-height: 1.5em;
+          padding: 0 40px 0 0;
+          &__title {
+            font-weight: 500;
+            padding-bottom: 15px;
+            font-size: 15px;
+          }
+          &__list {
+            list-style: none;
+            
+          }
+        }
+      }
+      &__privacy {
+        margin-top: 18px;
+        line-height: 1.5em;
+        position: relative;
+        padding-right: 30px;
+        &__title {
+          font-weight: 500;
+          padding-bottom: 15px;
+          font-size: 15px;
+        }
+        &__box{
+          display: flex;
+          &__list {
+            width: 50%;
+            padding: 0 10px 0 0;
+            list-style: none;
+          }
+  
+          &__lists {
+            width: 50%;
+            padding: 0 0 0 10px;
+            list-style: none;
+          }
+        }
+      }
+  
+      &__country {
+        width: 20%;
+        height: 240px;
+        margin-top: 18px;
+        line-height: 1.5em;
+        &__title {
+          font-weight: 500;
+          padding-bottom: 15px;
+          font-size: 15px;
+        }
+        &__list {
+          list-style: none;
+        }    
+      }
+    }
+    &__bottom {
+      position: absolute;
+      bottom: 20px;
+      margin: 0 190px;
+      
+      &__center {
+        left: 480px;
+        position: relative;
+        bottom: 20px;
+      }
+    }
+
+    .iconbox {
+     
+      .twitter {
+        font-size: 30px;
+        color: white;
+       
+      }
+    
+      .facebook {
+        font-size: 30px;
+        color: white;
+        left: 50px;
+        
+      }
+    
+      .icon {
+        position: relative;
+        color: white;
+        font-size: 30px;
+        bottom: 0px;
+      }
+    }
+
+    .bb {
+      color: #fff;
+      font-size: 25px;
+    }
+  }
+}
+.sell-btn{
+  bottom: 32px;
+  right: 32px;
+  width: 160px;
+  height: 160px;
+  font-size: 22px;
+  position: fixed;
+  z-index: 1000;
+  border-radius: 50%;
+  background: #ea352d;
+  color: #fff;
+  text-align: center;
+
+  &__title {
+    margin: 32px 0 0;
+  }
+    
+  .fas.fa-camera {
+    font-family: "Font Awesome 5 Free"; 
+    display: inline-block;
+    margin: 8px 0 0;
+    font-size: 54px;
+    font-weight: 900;
+    content: "\f030";
+    text-transform: none;
+    font-style: normal;
+  }
+}
+
+
+
+
+
+
+
+
+@media screen and ( max-width:1050px) {
+.footer {
+  margin-top: 500px;
+  width: 100%;
+  height: 700px;
+  font-weight: 500;
+  background: #212121;
+  padding: 0 20px 10px 20px;
+  position: relative;
+  color: #fff;
+
+  .aa {
+    color: white;
+    font-size: 12px;
+  }
+
+  
+
+  &__top {
+    margin: 0px 190px;
+    width: 1020px;
+    display: block;
+    
+    &__box {
+      display: flex;
+      &__about {
+        width: 300px;
+        height: 240px;
+        padding: 0 20px 0 0;
+        margin-top: 18px;
+        line-height: 1.5em;
+        &__title {
+          font-weight: 500;
+          padding-bottom: 15px;
+        }
+      }
+
+      &__help {
+        width: 300px;
+        margin-top: 18px;
+        line-height: 1.5em;
+        padding: 0 40px 0 0;
+        &__title {
+          font-weight: 500;
+          padding-bottom: 15px;
+        }
+      }
+    }
+    &__privacy {
+      
+      margin-top: 18px;
+      line-height: 1.5em;
+      padding-right: 30px;
+      &__title {
+        font-weight: 500;
+        padding-bottom: 15px;
+      }
+      &__box{
+        display: flex;
+        &__list {
+          padding: 0 10px 0 0;
+        }
+
+        &__list2 {
+         
+          padding: 0 0 0 10px;
+        }
+      }
+    }
+
+    &__country {
+      width: 20%;
+      height: 240px;
+      margin-top: 18px;
+      line-height: 1.5em;
+      &__title {
+        font-weight: 500;
+        padding-bottom: 15px;
+      }
+    }
+  }
+  
+  &__bottom {
+    
+    position: absolute;
+    bottom: 20px;
+    margin: 0 190px;
+    
+    &__center {
+      left: 480px;
+      position: relative;
+      bottom: 20px;
+    }
+  }
+}
+
+}
+
+
+.iconbox {
+  display: flex;
+  .twitter {
+    margin-top: 40px;
+    left: 0px;
+  }
+
+  .facebook {
+    margin: 40px;
+    color: #fff;
+  }
+}
+
+.icon {
+  color: #fff;
+  font-size: 25px;
+}
+
+
+.bb {
+  color: #fff;
+  font-size: 25px;
+}
