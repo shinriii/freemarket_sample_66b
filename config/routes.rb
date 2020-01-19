@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :tests
+  resources :tests, only: :index
   root to: 'tests#index'
 
-  resources :comments, only: :index
-  root to: 'comments#index'
+  # resources :comments, only: :index
+  # root to: 'comments#index'
 
 end
