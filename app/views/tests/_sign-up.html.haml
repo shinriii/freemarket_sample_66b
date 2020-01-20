@@ -1,0 +1,46 @@
+.header
+  .header__box
+    .header__box__first
+      =image_tag "/fmarket_logo_red.svg"
+  
+  %nav.header__sign-up-bar
+    
+    
+.main
+  .main__box
+    %h2.main__box__head 会員情報入力
+    .main__box__form
+      .main__box__form__first-box
+        .main__box__form__first-box__group1
+          %label{for: "nickname"} ニックネーム
+          %span.main__box__form__first-box__group1__require 必須
+          %input.main__box__form__first-box__group1__input{name: "nickname", placeholder: "例)　太郎", type: "text", value: ""}/
+        .main__box__form__first-box__group1
+          %label{for: "email"} メールアドレス
+          %span.main__box__form__first-box__group1__require 必須
+          %input.main__box__form__first-box__group1__input{name: "email", placeholder: "PC・携帯どちらでも可", type: "email", value: ""}/
+        .main__box__form__first-box__group1.password
+          %label{for: "password"} パスワード
+          %span.main__box__form__first-box__group1__require 必須
+          %input.main__box__form__first-box__group1__input{name: "password", placeholder: "7文字以上の半角英数字", type: "password", value: ""}/
+          %p.main__box__form__first-box__group1.password__text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.all__footer
+  .all__footer__texts
+    = link_to '' "プライバシーポリシー"
+    = link_to '' "メルカリ利用規約"
+    = link_to '' "特定商取引に関する表記"
+  = image_tag  "/logo_gray.svg", class:"all__footer__picture"
