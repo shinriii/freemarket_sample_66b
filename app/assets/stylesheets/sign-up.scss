@@ -82,7 +82,14 @@
                         margin: 8px 0 0;
                     }
 
-                    
+                    &__box{
+                        height: 14px;
+                        width: 343px;
+
+                        &__check-box{
+                            margin: 16px 0 0;
+                        }
+                    }
                 }
                 
             }
