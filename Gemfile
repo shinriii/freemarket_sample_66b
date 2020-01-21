@@ -79,8 +79,3 @@ gem "aws-sdk-s3", require: false
 gem 'haml-rails'
 gem 'erb2haml'
 gem "font-awesome-rails"
-gem 'devise'
-gem 'omniauth-facebook'
-gem 'omniauth-google-oauth2'
-gem "omniauth-rails_csrf_protection"
-gem 'rails-i18n'
