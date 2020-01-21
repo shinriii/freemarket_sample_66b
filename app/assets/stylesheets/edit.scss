@@ -1,0 +1,123 @@
+*{
+  
+  box-sizing: border-box;
+}
+
+.edit-box {
+  margin: 40px 210px 0;
+  padding: 0 0 40px;
+  height: 1292px;
+
+  &__content {
+    float: right;
+    width: 700px;
+    height: 568px;
+    background-color: white;
+    
+      
+    &__profile__head {
+      font-size: 24px;
+      padding: 8px 24px;
+      text-align: center;
+      line-height: 1.4;
+      background-color: white;
+    
+      &__icon {
+        padding: 72px 16px 24px;
+        background-image: url("/ciecle2P-kawaii-pink.jpg");
+        text-align: center;
+        background-color: #fff;
+        height: 156px;
+        display: flex;
+        justify-content: center;
+        
+
+        
+
+        
+        
+
+        &__input-box{
+          width: 200px;
+          height: 48px;
+          margin: 10px 0 0 8px;
+          padding: 10px 16px 8px;
+          font-size: 16px;
+          background-color: white;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+        }
+        
+        &__image{
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+
+        }
+      }
+      &__setting{
+        height: 362px;
+        width: 700px;
+        background-color: white;
+        padding: 40px 16px;
+
+        &__textarea-box{
+          height: 216px;
+          width: 668px;
+          background-color: white;
+          padding: 10px;
+          font-size: 16px;
+          
+        }
+        &__btn.btn-red{
+          height: 50px;
+          width: 668px;
+          margin: 16px 0 0;
+          background-color: red;
+          color: white;
+          font-size: 14px;
+          line-height: 50px;
+          cursor: pointer;
+          text-align: center;
+        }
+
+      }
+    }
+  }
+}
+
+
+  .edit-box__side-bar {
+    width: 280px;
+    height: 100%;
+    
+    &__mypage-nav {
+        height: 100%;
+        
+        li {
+            border: 1px solid;
+            background-color: #fff;
+            border-color: #EEEEEE;
+            padding: 16px;
+            font-size: 14px;
+        }
+        li:hover {
+            border: 1px solid;
+            border-color: #EEEEEE;
+            background-color: #FAFAFA;
+            padding: 16px;
+            font-size: 14px;
+        }
+        i {
+            float: right;
+            color: gray;
+        }
+    }
+    .mypage-head {
+        margin: 40px 0 0;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: #333;
+  }
