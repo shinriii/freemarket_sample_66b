@@ -34,7 +34,6 @@ ActiveRecord::Schema.define(version: 2020_01_20_145413) do
   end
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-
     t.string "address_firstname", null: false
     t.string "address_lastname", null: false
     t.string "address_kana_firstname", null: false
@@ -45,21 +44,12 @@ ActiveRecord::Schema.define(version: 2020_01_20_145413) do
     t.text "address", null: false
     t.string "building"
     t.bigint "phone_number"
-
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id"
-  end
-
-  create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "prefecture_id"
     t.string "city"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_addresses_on_user_id"
-
   end
 
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -67,7 +57,6 @@ ActiveRecord::Schema.define(version: 2020_01_20_145413) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
