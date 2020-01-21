@@ -1,12 +1,39 @@
-.contents
-  = render partial: 'contents-header'
-  = render partial: 'new-item'
-  = render partial: 'ladies'
-  = render partial: 'mens'
-  = render partial: 'electronics'
-  = render partial: 'brands'
-  = render partial: 'chanel'
-  = render partial: 'louis-vitton'
-  = render partial: 'supreme'
-  = render partial: 'nike'
-  = render partial: 'contents-footer'
+.main
+  = render partial: 'side-bar'
+
+  .main-bar
+    .main-bar__top-box
+      = link_to "#" do
+        = image_tag "/hito.png", class:"picture", height:"auto", width:"65"
+        %p.user_name ひのとしひろ
+      %p.user_info 評価数 0 出品数 0
+    .main-bar__center-box
+      .container1
+        %ul.menu1
+          %li
+            #about.menu_item1.active1 お知らせ
+          %li
+            #service.menu_item1 やることリスト
+        %ul.contents1
+          %li.content1.show1
+            = image_tag "/logo_gray.svg", class:"picture", height:"120", width:"120"
+            %p 現在、お知らせはありません
+          %li.content1
+            = image_tag "/logo_gray.svg", class:"picture", height:"120", width:"120"
+            %p 現在、やることリストはありません
+    .main-bar__bottom-box
+      .top 
+        購入した商品
+      .container2
+        %ul.menu2
+          %li
+            #about.menu_item2.active2 取引中
+          %li
+            #service.menu_item2 過去の取引
+        %ul.contents2
+          %li.content2.show2
+            = image_tag "/logo_gray.svg", class:"picture", height:"120", width:"120"
+            %p 取引中の商品がありません
+          %li.content2
+            = image_tag "/logo_gray.svg", class:"picture", height:"120", width:"120"
+            %p 過去に取引した商品がありません
