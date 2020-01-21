@@ -39,7 +39,6 @@
   width: 1020px;
   height: 100%;
   padding: 0 0 40px;
-  // display: block;
  
   &__content {
     float: right;
@@ -121,19 +120,9 @@
             height: 48px;
             text-decoration: none;
             outline: 0;
-            // -webkit-appearance: none;
             background-color: #fff;
           }
-          // i {
-          //   position: absolute;
-          //   right: 8px;
-          //   top: 50%;
-          //   z-index: 2;
-          //   color: #888;
-          //   font-size: 20px;
-          //   -webkit-transform: translate(0, -50%);
-          //   transform: translate(0, -50%);
-          // }
+         
           p{
             font-size: 15px;
           } 
@@ -151,7 +140,6 @@
         line-height: 48px;
         font-size: 14px;
         border: 1px solid transparent;
-        // -webkit-transition: all ease-out .3s;
         transition: all ease-out .3s;
         cursor: pointer;
         text-align: center;
