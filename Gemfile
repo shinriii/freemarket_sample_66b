@@ -42,6 +42,11 @@ group :development, :test do
   gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano3-unicorn'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
 end
 
 group :development do
@@ -74,6 +79,3 @@ gem "aws-sdk-s3", require: false
 gem 'haml-rails'
 gem 'erb2haml'
 gem "font-awesome-rails"
-gem 'jquery-rails'
-gem 'active_hash'
-
