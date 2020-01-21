@@ -76,4 +76,8 @@ gem 'erb2haml'
 gem "font-awesome-rails"
 gem 'jquery-rails'
 gem 'active_hash'
-
+gem 'devise'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
+gem 'rails-i18n
