@@ -1,0 +1,145 @@
+.all
+    .all__header
+        = image_tag  "/fmarket_logo_red.svg", class:"header-picture"
+          
+    .all__main
+        .all__main__contents
+
+            .all__main__contents__top 商品の情報を入力
+
+            .all__main__contents__images
+                .all__main__contents__images__head
+                    出品画像
+                    %span 必須
+                %p.column 最大10枚までアップロードできます
+                %label
+                    .all__main__contents__images__square
+                        ドラッグアンドドロップ
+                        %br/
+                        またはクリックしてファイルをアップロード
+                    %input{type:"file"}
+                
+
+            .all__main__contents__products
+                .all__main__contents__products__name
+                    商品名
+                    %span 必須
+                %input.name-column{type:"text", placeholder:"商品名  (必須40文字まで)"}
+                .all__main__contents__products__description
+                    商品の説明
+                    %span 必須
+                %textarea.description-column{placeholder:"商品の説明 (必須1,000文字いない)  (色、素材、重さ、定価、注意点など) 例)        2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでオススメです。"}
+
+            .all__main__contents__details
+                .all__main__contents__details__left-box
+                    %p 商品の詳細
+                .all__main__contents__details__right-box
+                    .all__main__contents__details__right-box__category
+                        カテゴリー
+                        %span 必須
+                    %select
+                        %option{value:""} ---
+                        %option{value:"レディース"} レディース
+                        %option{value:"メンズ"} メンズ
+                        %option{value:"ベビー・キッズ"} ベビー・キッズ
+                        %option{value:"インテリア・住まい・小物"} インテリア・住まい・小物
+                        %option{value:"本・音楽・ゲーム"} 本・音楽・ゲーム
+                        %option{value:"おもちゃ・ホビー・グッズ"} おもちゃ・ホビー・グッズ
+                        %option{value:"コスメ・香水・美容"} コスメ・香水・美容
+                        %option{value:"家電・スマホ・カメラ"} 家電・スマホ・カメラ
+                        %option{value:"スポーツ・レジャー"} スポーツ・レジャー
+                        %option{value:"ハンドメイド"} ハンドメイド
+                        %option{value:"チケット"} チケット
+                        %option{value:"自動車・オートバイ"} 自動車・オートバイ
+                        %option{value:"その他"} その他
+                    
+                    .all__main__contents__details__right-box__condition
+                        商品の状態
+                        %span 必須
+                    %select
+                        %option{value:""} ---
+                        %option{value:"新品、未使用"} 新品、未使用
+                        %option{value:"未使用に近い"} 未使用に近い
+                        %option{value:"目立った傷や汚れなし"} 目立った傷や汚れなし
+                        %option{value:"やや傷や汚れあり"} やや傷や汚れあり
+                        %option{value:"傷や汚れあり"} 傷や汚れあり
+                        %option{value:"全体的に状態が悪い"} 全体的に状態が悪い
+
+            .all__main__contents__delivery
+                .all__main__contents__delivery__left-box
+                    %p 配送について
+                    = link_to '' "?"
+                .all__main__contents__delivery__right-box
+                    .all__main__contents__delivery__right-box__burden
+                        配送料の負担
+                        %span 必須
+                    %select
+                        %option{value:""} ---
+                        %option{value:"送料込み(出品者負担)"} 送料込み(出品者負担)
+                        %option{value:"着払い(購入者負担)"} 着払い(購入者負担)
+                    
+                    .all__main__contents__delivery__right-box__prefectures
+                        発送元の地域
+                        %span 必須
+                    = form_for '' do |f|
+                        = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt:"---"
+
+                    .all__main__contents__delivery__right-box__dates
+                        発送までの日数
+                        %span 必須
+                    %select
+                        %option{value: ""} ---
+                        %option{value: "1~2日で発送"} 1~2日で発送
+                        %option{value: "2~3日で発送"} 2~3日で発送
+                        %option{value: "4~7日で発送"} 4~7日で発送
+
+            .all__main__contents__prices
+                .all__main__contents__prices__left-box
+                    %p 販売価格(300~9,999,999)
+                    = link_to '' "?"
+                .all__main__contents__prices__right-box
+                    .all__main__contents__prices__right-box__top
+                        .all__main__contents__prices__right-box__top__left
+                            価格
+                            %span 必須
+                        .all__main__contents__prices__right-box__top__right
+                            ¥
+                            %input.price{type:"text", placeholder:"                     例)300"}
+                    .all__main__contents__prices__right-box__center
+                        .all__main__contents__prices__right-box__center__left
+                            販売手数料(10%)
+                        .all__main__contents__prices__right-box__center__right
+                            %p -
+                    .all__main__contents__prices__right-box__bottom
+                        .all__main__contents__prices__right-box__bottom__left
+                            販売利益
+                        .all__main__contents__prices__right-box__bottom__right
+                            %p -
+
+            .all__main__contents__bottom-box
+                .all__main__contents__bottom-box__caution
+                    %p
+                        = link_to '' "禁止されている出品"
+                        、
+                        = link_to '' "行為"
+                        を必ずご確認ください。
+                    %p
+                        またブランド品でシリアルナンバー等がある場合はご記載ください。
+                        = link_to '' "偽ブランドの販売"
+                        は犯罪であり処罰される可能性があります。
+                    %p
+                        また、出品をもちまして
+                        = link_to '' "加盟店規約"
+                        に同意したことになります。
+                    %button.exhibition{type:"submit", value:"#"}
+                        出品する
+                    %button.return{type:"submit", value:"#"}
+                        もどる
+
+
+    .all__footer
+        .all__footer__texts
+            = link_to '' "プライバシーポリシー"
+            = link_to '' "メルカリ利用規約"
+            = link_to '' "特定商取引に関する表記"
+        = image_tag  "/logo_gray.svg", class:"all__footer__picture"
