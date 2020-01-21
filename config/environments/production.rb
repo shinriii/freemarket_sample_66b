@@ -40,6 +40,7 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   # config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
@@ -61,7 +62,7 @@ Rails.application.configure do
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
-  # config.active_job.queue_name_prefix = "freemarket_sample_66b_#{Rails.env}"
+  # config.active_job.queue_name_prefix = "freemarket_sample66b_#{Rails.env}"
 
   config.action_mailer.perform_caching = false
 

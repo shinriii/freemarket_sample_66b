@@ -1,0 +1,69 @@
+.all
+    .all__header
+        = image_tag  "/fmarket_logo_red.svg", class:"header-picture"
+          
+    .all__main
+        .all__main__contents
+
+            .all__main__contents__top 購入内容の確認
+                
+
+            .all__main__contents__products
+                .all__main__contents__products__item-box
+                    .all__main__contents__products__item-box__image
+                        = image_tag "/AirPodsPro.jpeg"
+                    .all__main__contents__products__item-box__detail-box
+                        .all__main__contents__products__item-box__detail-box__name
+                            AirPods Pro
+                        .all__main__contents__products__item-box__detail-box__price
+                            ¥27,000  (税込)  送料込
+
+            .all__main__contents__buy-box
+                .all__main__contents__buy-box__price
+                    .all__main__contents__buy-box__price__top
+                        .all__main__contents__buy-box__price__top__left
+                            支払い金額
+                        .all__main__contents__buy-box__price__top__right
+                            ¥27,000
+                    .all__main__contents__buy-box__price__bottom
+                        .all__main__contents__buy-box__price__bottom__left
+                            %input{type:"checkbox"}
+                        .all__main__contents__buy-box__price__bottom__right
+                            ポイントを使用(所持ポイント:P1111)
+                .all__main__contents__buy-box__method
+                    .all__main__contents__buy-box__method__left
+                        .all__main__contents__buy-box__method__left__top
+                            支払い方法
+                        .all__main__contents__buy-box__method__left__bottom
+                            クレジットカード
+                            %br/
+                            ************4242
+                            %br/
+                            有効期限12/22
+                            %br/
+                            = image_tag  "/master-card.png"
+                    .all__main__contents__buy-box__method__right
+                        = link_to '' "変更する"
+                .all__main__contents__buy-box__delivery
+                    .all__main__contents__buy-box__delivery__left
+                        .all__main__contents__buy-box__delivery__left__send1
+                            配送先
+                        .all__main__contents__buy-box__delivery__left__send2
+                            〒123-4567
+                            %br/
+                            広島県東広島市西条町
+                            %br/
+                            広島元気
+                    .all__main__contents__buy-box__delivery__right
+                        = link_to '' "変更する"
+                .all__main__contents__buy-box__bottom-box
+                    %button.buy{type:"submit", value:"#"}
+                        購入する
+
+
+    .all__footer
+        .all__footer__texts
+            = link_to '' "プライバシーポリシー"
+            = link_to '' "メルカリ利用規約"
+            = link_to '' "特定商取引に関する表記"
+        = image_tag  "/logo_gray.svg", class:"all__footer__picture"
