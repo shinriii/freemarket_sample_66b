@@ -1,16 +1,17 @@
+
 .credit
   %nav.credit__nav
     %ul
       %li
         = link_to "#" do
-          %span{itemscope: "title"} メルカリ
+          %span メルカリ
           %i.fas.fa-chevron-right
-      %li{itemscope: "", itemscope: "#"}
+      %li
         = link_to "#" do
-          %span{itemscope: "title"} マイページ
+          %span マイページ
           %i.fas.fa-chevron-right
-      %li{class: "payment"}
-        %span{itemscope: "title"} 支払い方法
+      %li.payment
+        %span 支払い方法
   
   %main.credit__main
     .main
@@ -24,10 +25,9 @@
               
           %section.main__inner__card
             .main__inner__card__btn
-              = link_to "#" do
-                .btn-default.btn-red.submit_button
-                  %i.fas.fa-credit-card
-                    クレジットカードを追加する
+              %a.btn-default.btn-red.submit_button{href: "#"}
+                %i.fas.fa-credit-card
+                  クレジットカードを追加する
 
           .main__inner__regist
             = link_to "#" do
