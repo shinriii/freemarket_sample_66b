@@ -11,11 +11,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    if params[:sns_auth] == 'true'
-      pass = Devise.friendly_token
-      params[:user][:password] = pass
-      params[:user][:password_confirmation] = pass
-    end
     #バリデーションチェック
     @user = User.new(sign_up_params)
     unless @user.valid?
@@ -40,6 +35,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.build_address(@address.attributes)
     @user.save
     sign_in(:user, @user)
+  end
+
+  def create
+    if params[:sns_auth] == 'true'
+      pass = Devise.friendly_token
+      params[:user][:password] = pass
+      params[:user][:password_confirmation] = pass
+    end
+    super
   end
 
   # GET /resource/edit

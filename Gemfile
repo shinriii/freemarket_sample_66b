@@ -79,9 +79,7 @@ gem "aws-sdk-s3", require: false
 gem 'haml-rails'
 gem 'erb2haml'
 gem "font-awesome-rails"
-
 gem 'active_hash'
-
 gem 'jquery-rails'
 gem 'active_hash'
 gem 'devise'
