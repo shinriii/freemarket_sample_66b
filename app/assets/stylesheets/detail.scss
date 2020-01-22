@@ -1,0 +1,43 @@
+.product{
+
+  &__item{
+    padding: 24px 40px 40px;
+    background-color: white;
+    margin: 40px auto 0;
+    padding: 24px 16px 55px 16px;
+    height: 980px;
+    width: 700px;
+    &__name{
+      font-size: 24px;
+      text-align: center;
+    }
+    &__main{
+      height: 420px;
+      width: 620px;
+      margin: 16px 0 0;
+      &__photo{
+        height: 375px;
+        width: 300px;
+        float: left;
+        &__dots{
+          height: 60px;
+          width: 300px;
+        }
+        img{
+          height: 300px;
+          width: 300px;
+        }
+      }
+      &__detail{
+        float: right;
+        max-width: 300px;
+        height: 420px;
+        margin: 0 auto;
+        &__tbody{
+          height: 419px;
+          width: 299px;
+        }
+      }
+    }
+  }
+}
