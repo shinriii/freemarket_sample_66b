@@ -3,17 +3,176 @@
     %h1.product__item__name バッグ
     .product__item__main
       .product__item__main__photo
-        %img{"data-src": "https://static.mercdn.net/item/detail/orig/photos/m86923341585_3.jpg?1578888686", style: "opacity: 1;"}/
-
-        .product__item__main__photo__1
-          .product__item__main__photo__1__box
-            .product__item__main__photo__1__box__stage
+        = image_tag "/319531408.jpg", style: "opacity: 1;"
+        .product__item__main__photo__bottom
+          = image_tag "/h-i289.jpg"
+          = image_tag "/h-i289.jpg"
+          = image_tag "/h-i289.jpg"
 
       .product__item__main__detail
-        %tbody.product__item__main__detail__tbody
-          %th.product__item__main__detail__tbody__th 出品者
-          %td.product__item__main__detail__tbody__td
-            = link_to '' "太郎"
+        .product__item__main__detail__tbody
+          .product__item__main__detail__tbody__tr
+            .product__item__main__detail__tbody__tr__th 出品者
+            .product__item__main__detail__tbody__tr__td 太郎
+          .product__item__main__detail__tbody__tr-2
+            .product__item__main__detail__tbody__tr-2__th カテゴリー
+            .product__item__main__detail__tbody__tr-2__td レディース
+          .product__item__main__detail__tbody__tr-3
+          .product__item__main__detail__tbody__tr-4
+          .product__item__main__detail__tbody__tr-5
+          .product__item__main__detail__tbody__tr-6
+          .product__item__main__detail__tbody__tr-7
+          .product__item__main__detail__tbody__tr-8
 
-      .product__item__main__photo__dots
-            
+    .product__item__price-box
+      %span.product__item__price-box__price ¥1,200
+      %span.product__item__price-box__tax (税込)
+      %span.product__item__price-box__shipping-fee 送料込み
+    .product__item__buy-btn
+      = link_to "https://www.mercari.com/jp/transaction/buy/m46118178334/" do
+        購入画面に進む
+
+    .product__item__description
+      %p.product__item__description__inner
+        2000円→1200円にお値下げいたします。
+        %br
+        %br
+        定番のバッグで、大きさもしっかりあり、マザーズバッグやビジネスバッグになるかと思います。
+        %br
+        %br
+        革特有のシワ感が少しありますが、リペアクリーニング済みのため目立った傷スレ汚れはないかと思います。作りがしっかりしてますので、まだまだデイリーに使えるかと思います。
+        %br
+        %br
+        used品のためご理解頂ける方にお譲り致します。
+
+    .product__item__text-box
+      .product__item__text-box__left
+        %button.product__item__text-box__left__like{type: "button"}
+
+  .product__detail-message
+    .product__detail-message__box
+      .product__detail-message__box__content
+        %form.product__detail-message__box__content__message-form{action: "https://www.mercari.com/jp/comment/add/", method: "POST"}
+          %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %textarea.product__detail-message__box__content__message-form__textarea{type: "text"}
+          %button.product__detail-message__box__content__message-form__btn-gray{type: "submit"}
+            %span コメントする
+
+  %ul.product__nav-item
+    %li.product__nav-item__link
+      ブルゾン
+    %li.product__nav-item__link-2
+      ワンピース
+
+  .product__media
+    .product__media__box
+
+  .product__image
+    .product__image__box
+      %h2.product__image__box__head
+        太郎さんのその他の出品
+      .product__image__box__content
+        = link_to "#" do
+          .product__image__box__content__box
+            %figure.product__image__box__content__box__photo
+              = image_tag "/16088508301_main.jpg",width:"220px",height:"220px"
+            .product__image__box__content__box__body
+              %h3.product__image__box__content__box__body__name ダウンジャケット
+              .product__image__box__content__box__body__num
+                .product__image__box__content__box__body__num__price ¥5,000
+        = link_to "#" do
+          .product__image__box__content__box
+            %figure.product__image__box__content__box__photo
+              = image_tag "/buruzon.jpg",width:"220px",height:"220px"
+            .product__image__box__content__box__body
+              %h3.product__image__box__content__box__body__name ブルゾン
+              .product__image__box__content__box__body__num
+                .product__image__box__content__box__body__num__price ¥4,000
+        = link_to "#" do
+          .product__image__box__content__box
+            %figure.product__image__box__content__box__photo
+              = image_tag "/kardigan.jpg",width:"220px",height:"220px"
+            .product__image__box__content__box__body
+              %h3.product__image__box__content__box__body__name カーディガン
+              .product__image__box__content__box__body__num
+                .product__image__box__content__box__body__num__price ¥3,000
+        = link_to "#" do
+          .product__image__box__content__box
+            %figure.product__image__box__content__box__photo
+              = image_tag "/gpants.jpg",width:"220px",height:"220px"
+            .product__image__box__content__box__body
+              %h3.product__image__box__content__box__body__name gパン
+              .product__image__box__content__box__body__num
+                .product__image__box__content__box__body__num__price ¥3,500
+        = link_to "#" do
+          .product__image__box__content__box
+            %figure.product__image__box__content__box__photo
+              = image_tag "/torainer.jpeg",width:"220px",height:"220px"
+            .product__image__box__content__box__body
+              %h3.product__image__box__content__box__body__name トレーナー
+              .product__image__box__content__box__body__num
+                .product__image__box__content__box__body__num__price ¥5,500
+        = link_to "#" do
+          .product__image__box__content__box
+            %figure.product__image__box__content__box__photo
+              = image_tag "/tshats.jpg",width:"220px",height:"220px"
+            .product__image__box__content__box__body
+              %h3.product__image__box__content__box__body__name tシャツ
+              .product__image__box__content__box__body__num
+                .product__image__box__content__box__body__num__price ¥2,000
+
+    .product__image__box
+      %h2.product__image__box__head ヴィトンのバッグその他の商品
+      .product__image__box__content
+        = link_to "#" do
+          .product__image__box__content__box
+            %figure.product__image__box__content__box__photo
+              = image_tag "/vuiton.jpg",width:"220px",height:"220px"
+            .product__image__box__content__box__body
+              %h3.product__image__box__content__box__body__name ヴィトン バッグ
+              .product__image__box__content__box__body__num
+                .product__image__box__content__box__body__num__price ¥5,000
+        = link_to "#" do
+          .product__image__box__content__box
+            %figure.product__image__box__content__box__photo
+              = image_tag "/vuitton.jpg",width:"220px",height:"220px"
+            .product__image__box__content__box__body
+              %h3.product__image__box__content__box__body__name vuitton
+              .product__image__box__content__box__body__num
+                .product__image__box__content__box__body__num__price ¥６,000
+
+        = link_to "#" do
+          .product__image__box__content__box
+            %figure.product__image__box__content__box__photo
+              = image_tag "/louis.jpg",width:"220px",height:"220px"
+            .product__image__box__content__box__body
+              %h3.product__image__box__content__box__body__name louis vuitton
+              .product__image__box__content__box__body__num
+                .product__image__box__content__box__body__num__price ¥7,000
+
+        = link_to "#" do
+          .product__image__box__content__box
+            %figure.product__image__box__content__box__photo
+              = image_tag "/vuitton hand.jpg",width:"220px",height:"220px"
+            .product__image__box__content__box__body
+              %h3.product__image__box__content__box__body__name louis vuitton ハンドバッグ
+              .product__image__box__content__box__body__num
+                .product__image__box__content__box__body__num__price ¥8,000
+
+        = link_to "#" do
+          .product__image__box__content__box
+            %figure.product__image__box__content__box__photo
+              = image_tag "/vuitton1.jpg",width:"220px",height:"220px"
+            .product__image__box__content__box__body
+              %h3.product__image__box__content__box__body__name louis vuitton ハンドバッグ 限定
+              .product__image__box__content__box__body__num
+                .product__image__box__content__box__body__num__price ¥8,500
+
+        = link_to "#" do
+          .product__image__box__content__box
+            %figure.product__image__box__content__box__photo
+              = image_tag "/vuitton pop.jpg",width:"220px",height:"220px"
+            .product__image__box__content__box__body
+              %h3.product__image__box__content__box__body__name louis vuitton ハンドバッグ pop
+              .product__image__box__content__box__body__num
+                .product__image__box__content__box__body__num__price ¥9,500
