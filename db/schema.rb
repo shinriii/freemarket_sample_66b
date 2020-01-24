@@ -39,12 +39,11 @@ ActiveRecord::Schema.define(version: 2020_01_22_083004) do
     t.string "address_kana_firstname", null: false
     t.string "address_kana_lastname", null: false
     t.string "zipcode", null: false
-    t.string "prefectures", null: false
     t.string "municipalities", null: false
     t.text "address", null: false
     t.string "building"
     t.bigint "phone_number"
-    t.integer "prefecture_id"
+    t.integer "prefecture_id", null: false
     t.string "city"
     t.bigint "user_id"
     t.datetime "created_at", null: false
