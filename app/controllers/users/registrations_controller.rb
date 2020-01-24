@@ -37,7 +37,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in(:user, @user)
   end
 
-  def create
+  def create_sns
     if params[:sns_auth] == 'true'
       pass = Devise.friendly_token
       params[:user][:password] = pass
@@ -75,7 +75,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def address_params
     params.require(:address).permit(
       :address_firstname, :address_lastname, :address_kana_firstname, :address_kana_lastname,
-      :zipcode, :prefectures, :municipalities, :address, :building, :phone_number
+      :zipcode, :prefecture_id, :municipalities, :address, :building, :phone_number
     )
   end
 
