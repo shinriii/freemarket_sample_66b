@@ -8,7 +8,17 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end
-  resources :users, only: :new 
+
+  resources :signup do
+    collection do
+      get 'index'
+      get 'done' 
+    end
+  end
+
+  resources :mypages, only: [:index] do
+    get 'logout', to: 'mypage#logout'
+  end
   
   root 'items#index'
   get 'items/new', to: 'items#new'
