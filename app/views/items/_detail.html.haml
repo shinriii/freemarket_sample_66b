@@ -6,30 +6,56 @@
         = image_tag "/319531408.jpg", style: "opacity: 1;"
         .product__item__main__photo__bottom
           = image_tag "/h-i289.jpg"
-          = image_tag "/h-i289.jpg"
-          = image_tag "/h-i289.jpg"
+          = image_tag "/vuitton2.jpg"
+          = image_tag "/vuitton3.jpeg"
 
       .product__item__main__detail
         .product__item__main__detail__tbody
           .product__item__main__detail__tbody__tr
             .product__item__main__detail__tbody__tr__th 出品者
-            .product__item__main__detail__tbody__tr__td 太郎
+            .product__item__main__detail__tbody__tr__td
+              .product__item__main__detail__tbody__tr__td__name 太郎
+              .product__item__main__detail__tbody__tr__td__icon
+                .product__item__main__detail__tbody__tr__td__icon__rating
+                  %i.product__item__main__detail__tbody__tr__td__icon__rating.fas.fa-laugh
+                  %span 36
+                .product__item__main__detail__tbody__tr__td__icon__rating
+                  %i.product__item__main__detail__tbody__tr__td__icon__rating.fas.fa-meh
+                  %span 0
+                .product__item__main__detail__tbody__tr__td__icon__rating
+                  %i.product__item__main__detail__tbody__tr__td__icon__rating.fas.fa-frown
+                  %span 0
+
+
+              
           .product__item__main__detail__tbody__tr-2
             .product__item__main__detail__tbody__tr-2__th カテゴリー
             .product__item__main__detail__tbody__tr-2__td レディース
           .product__item__main__detail__tbody__tr-3
+            .product__item__main__detail__tbody__tr-3__th ブランド
+            .product__item__main__detail__tbody__tr-3__td ヴィトン
           .product__item__main__detail__tbody__tr-4
+            .product__item__main__detail__tbody__tr-4__th 商品の状態
+            .product__item__main__detail__tbody__tr-4__td 目立った傷や汚れなし
           .product__item__main__detail__tbody__tr-5
+            .product__item__main__detail__tbody__tr-5__th 配送料の負担
+            .product__item__main__detail__tbody__tr-5__td 送料込み(出品者負担)
           .product__item__main__detail__tbody__tr-6
+            .product__item__main__detail__tbody__tr-6__th 配送の方法
+            .product__item__main__detail__tbody__tr-6__td らくらくメルカリ便
           .product__item__main__detail__tbody__tr-7
+            .product__item__main__detail__tbody__tr-7__th 配送元地域
+            .product__item__main__detail__tbody__tr-7__td 福岡県
           .product__item__main__detail__tbody__tr-8
+            .product__item__main__detail__tbody__tr-8__th 発送日の目安
+            .product__item__main__detail__tbody__tr-8__td 4日~7日で発送
 
     .product__item__price-box
       %span.product__item__price-box__price ¥1,200
       %span.product__item__price-box__tax (税込)
       %span.product__item__price-box__shipping-fee 送料込み
-    .product__item__buy-btn
-      = link_to "https://www.mercari.com/jp/transaction/buy/m46118178334/" do
+    = link_to "#" do
+      .product__item__buy-btn
         購入画面に進む
 
     .product__item__description
@@ -48,6 +74,17 @@
     .product__item__text-box
       .product__item__text-box__left
         %button.product__item__text-box__left__like{type: "button"}
+          %i.product__item__text-box__left__like.far.fa-heart
+            %span いいね!
+            %span 0
+        .product__item__text-box__left__report
+          %i.product__item__text-box__left__report.far.fa-flag
+            %span 不適切な商品の報告
+      .product__item__text-box__right
+        %i.product__item__text-box__right.fas.fa-lock
+        %span あんしん・あんぜんへの取り組み
+
+
 
   .product__detail-message
     .product__detail-message__box
@@ -56,16 +93,23 @@
           %p 相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
           %textarea.product__detail-message__box__content__message-form__textarea{type: "text"}
           %button.product__detail-message__box__content__message-form__btn-gray{type: "submit"}
-            %span コメントする
+            %span コメントする 
 
-  %ul.product__nav-item
-    %li.product__nav-item__link
-      ブルゾン
-    %li.product__nav-item__link-2
-      ワンピース
+  .product__nav-item
+    .product__nav-item__box
+      .product__nav-item__box__link
+        ブルゾン
+        .product__nav-item__box__link.fas.fa-angle-left
+  
+      .product__nav-item__box__link-2
+        ワンピース
+        .product__nav-item__box__link-2.fas.fa-angle-right
 
   .product__media
     .product__media__box
+      %i.product__media__box__.fab.fa-facebook-square
+      %i.product__media__box__.fab.fa-twitter-square
+      %i.product__media__box__.fab.fa-pinterest-square
 
   .product__image
     .product__image__box
