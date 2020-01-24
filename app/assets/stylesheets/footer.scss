@@ -5,14 +5,15 @@
     font-weight: 500;
     background: #212121;
     padding: 0 20px 10px 20px;
-    position: relative;
+    // position: relative;
     color: #fff;
+    clear: both;
   
     &__top {
       margin: 0px 190px;
       width: 1020px;
       display: block;
-      position: absolute;
+      // position: absolute;
       display: flex;
       justify-content: space-around;
 
@@ -99,14 +100,15 @@
       }
     }
     &__bottom {
-      position: absolute;
-      bottom: 20px;
-      margin: 0 190px;
+      // position: absolute;
+      margin: 30px auto 20px;
+      width: 1020px;
       
       &__center {
+        
         left: 480px;
-        position: relative;
         bottom: 20px;
+        text-align: center;
       }
     }
 
@@ -126,7 +128,7 @@
       }
     
       .icon {
-        position: relative;
+        
         color: white;
         font-size: 30px;
         bottom: 0px;
@@ -134,6 +136,7 @@
     }
 
     .bb {
+      
       color: #fff;
       font-size: 25px;
     }

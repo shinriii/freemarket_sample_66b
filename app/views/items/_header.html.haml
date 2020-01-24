@@ -603,36 +603,35 @@
               %li
                 = link_to "#",class:"header__bottom__left__brand__search__parent" do
                   ブランド一覧
-
-    .header__bottom__right
-      %ul.header__bottom__right__signup
-        %li
-          = link_to '新規会員登録', '#', class: 'header__bottom__right__signup__new'
-        %li
-          = link_to 'ログイン', '#', class: 'header__bottom__right__signup__login'
-
-
-      -# ログインができた時に以下を表示する
-    -# .header__bottom__right
-    -#   = link_to "#" do
-    -#     .header__bottom__right__like
-    -#       %i.far.fa-heart
-    -#       .header__bottom__right__like__text
-    -#         いいね！一覧
-    -#   = link_to "#" do
-    -#     .header__bottom__right__bell
-    -#       %i.far.fa-bell
-    -#       .header__bottom__right__bell__text
-    -#         お知らせ
-    -#   = link_to "#" do
-    -#     .header__bottom__right__check
-    -#       %i.fas.fa-check
-    -#       .header__bottom__right__check__text
-    -#         やることリスト
-    -#   = link_to "#" do
-    -#     .header__bottom__right__mypage
-    -#       = image_tag, alt: "", "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "32", class:"img"
-    -#       .header__bottom__right__mypage__text
-    -#         マイページ
+    - if user_signed_in?
+      .header__bottom__right
+        = link_to "#" do
+          .header__bottom__right__like
+            %i.far.fa-heart
+            .header__bottom__right__like__text
+              いいね！一覧
+        = link_to "#" do
+          .header__bottom__right__bell
+            %i.far.fa-bell
+            .header__bottom__right__bell__text
+              お知らせ
+        = link_to "#" do
+          .header__bottom__right__check
+            %i.fas.fa-check
+            .header__bottom__right__check__text
+              やることリスト
+        = link_to mypages_path do
+          .header__bottom__right__mypage
+            = image_tag "//static.mercdn.net/images/member_photo_noimage_thumb.png", width: "32", class:"img"
+            .header__bottom__right__mypage__text
+              マイページ
+    - else
+      .header__bottom__right
+        %ul.header__bottom__right__signup
+          %li
+            = link_to '新規会員登録', signup_index_path, class: 'header__bottom__right__signup__new'
+          %li
+            = link_to 'ログイン', new_user_session_path, class: 'header__bottom__right__signup__login'
+ 
 
 

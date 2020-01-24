@@ -1,6 +1,7 @@
 .all
     .all__header
-        = image_tag  "/fmarket_logo_red.svg", class:"header-picture"
+        = link_to "/" do
+            = image_tag  "/fmarket_logo_red.svg", class:"header-picture"
           
     .all__main
         .all__main__contents
@@ -133,8 +134,9 @@
                         に同意したことになります。
                     %button.exhibition{type:"submit", value:"#"}
                         出品する
-                    %button.return{type:"submit", value:"#"}
-                        もどる
+                    = link_to "/" do
+                        %button.return{type:"submit", value:"#"}
+                            もどる
 
 
     .all__footer

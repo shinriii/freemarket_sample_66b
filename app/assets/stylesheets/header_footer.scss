@@ -1,0 +1,33 @@
+.wrapper{
+  background: rgb(245, 245, 245);
+    width: 100vw;
+    height: 100%;
+    &__header {
+        height: 128px;
+        text-align: center;
+        img {
+            width: 200px;
+            height: 128px;
+        }
+    &__footer {
+      height: 220px;
+      width: 456px;
+      margin: 0 auto;
+      padding: 40px 0;
+      text-align: center;
+      &__texts {
+          text-decoration: none;
+          font-size: 12px;
+          a {
+              text-decoration: none;
+              color: black;
+          }
+      }
+      img {
+          height: 100px;
+          width: 100px;
+          margin-top: 30px;
+      }
+  }
+  }
+}

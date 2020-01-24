@@ -9,13 +9,13 @@
     = f.label :メールアドレス
     %br/
     = f.email_field :email, autofocus: true, autocomplete: "email"
-  -# - if @sns_id.present?
-  -#   = hidden_field_tag :sns_auth, true
-  -# - else
-  .field
-    = f.label :パスワード
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
+  - if @sns_id.present?
+    = hidden_field_tag :sns_auth, true
+  - else
+    .field
+      = f.label :パスワード
+      %br/
+      = f.password_field :password, autocomplete: "new-password"
   .field
     = f.label :お名前（全角）
     %br/
