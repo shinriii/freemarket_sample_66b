@@ -1,0 +1,149 @@
+*{
+  box-sizing: border-box;
+}
+
+.total{
+  height: 1079px;
+  &__box{
+    height: 731px;
+    &__login{
+      height: 731px;
+      margin: 0 auto;
+      background-color: white;
+      width: 456px;
+      &__box-3{
+        height: 406px;
+        width: 456px;
+        &__form{
+          height: 406px;
+          width: 456px;
+          padding: 24px 64px 32px;
+          &__note{
+            height: 14px;
+            width: 328px;
+            margin: 80px 0 0;
+            font-size: 14px;
+            color: #0099e8;
+            cursor: pointer;
+          }
+          &__login-submit{
+            height: 50px;
+            width: 328px;
+            margin: 24px 0 0;
+            background-color: #ea352d;
+            border: 1px solid #ea352d;
+            color: white;
+            font-size: 14px;
+            line-height: 50px;
+            text-align: center;
+            cursor: pointer;
+          }
+          // &__robot{
+          //   height: 78px;
+          //   margin: 24px 0 0;
+          //   &__box{
+          //     height: 78px;
+          //     width: 328px;
+          //     &__frame{
+          //       height: 78px;
+          //       width: 304px;
+          //       border: 1px solid #ccc;
+          //       border-radius: 4px;
+          //       background-color: #f5f5f5;
+          //       br{
+                  
+          //       }
+          //       p{
+          //         float: right;
+          //         margin-top: 20px;
+          //         margin-right: 95px;
+          //       }
+          //       &__icon.far.fa-square{
+          //         background-color: white;
+          //         color: gray;
+          //         font-size: 30px;
+          //         margin-left: 10px;
+          //         margin-top: 20px;
+          //       }
+          //     }
+          //   }
+          // }
+          &__box{
+            height: 48px;
+            // padding: 10px 16px 8px;
+            margin: 24px 0 0;
+            &__email{
+              height: 48px;
+              width: 328px;
+              padding: 10px 16px 8px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+      &__box-2{
+        height: 181px;
+        width: 456px;
+        padding: 32px 64px;
+        &__btn-google{
+          height: 50px;
+          width: 328px;
+          margin: 16px 0 0;
+          border: #979797 solid 1px;
+          &__icon.fab.fa-google{
+            font-size: 18px;
+            // height: 26px;
+            // width: 26px;
+            margin-left: 15px;
+            line-height: 50px;
+            color: red;
+          }
+          p{
+            font-size: 14px;
+            display: inline;
+            margin-left: 67px;
+          }
+        }
+        &__btn-facebook{
+          height: 50px;
+          width: 328px;
+          background-color: #385185;
+          line-height: 50px;
+          .fab.fa-facebook-square{
+            font-size: 26px;
+            height: 26px;
+            width: 26px;
+            color: white;
+            margin-left: 15px;
+          }
+          p{
+            font-size: 14px;
+            display: inline;
+            color: white;
+            margin-left: 50px;
+          }
+        }
+      }
+      &__box{
+        padding: 40px 64px;
+        height: 144px;
+        text-align: center;
+        border-bottom: 1px solid #ccc;
+        p{
+          font-size: 14px;
+        }
+        &__new{
+          height: 42px;
+          width: 328px;
+          line-height: 42px;
+          text-align: center;
+          background-color: #0099e8;
+          color: white;
+          margin: 8px 0 0;
+        }
+      }
+    }
+  }
+}
