@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_01_20_145413) do
-
 ActiveRecord::Schema.define(version: 2020_01_22_083004) do
-
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -48,9 +44,7 @@ ActiveRecord::Schema.define(version: 2020_01_22_083004) do
     t.string "building"
     t.bigint "phone_number"
     t.integer "prefecture_id", null: false
-    t.integer "prefecture_id"
     t.string "city"
-
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -63,7 +57,6 @@ ActiveRecord::Schema.define(version: 2020_01_22_083004) do
     t.datetime "updated_at", null: false
   end
 
-
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "provider"
     t.string "uid"
@@ -72,7 +65,6 @@ ActiveRecord::Schema.define(version: 2020_01_22_083004) do
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
-
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", default: "", null: false
