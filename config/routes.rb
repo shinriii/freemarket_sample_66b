@@ -9,22 +9,31 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
  
-  root 'items#index'  # ログインor新規登録を選ぶページ
-  resources :items, only: :new  # 新規登録方法を選ぶページ
+  root 'items#index'
+  get 'items/new', to: 'items#new'
 
-
-  resources :signup do
-    collection do
-      get 'index'
-      get 'done' 
-    end
+  resources :signup , only: [:index] do
+      get '/signup/index', to:'signup#index'
   end
 
   resources :mypages, only: [:index] do
-    get 'logout', to: 'mypage#logout'
+    get '/mypages', to: 'mypages#index'
   end
-  
-  root 'items#index'
-  get 'items/new', to: 'items#new'
-  
+
+  resources :profiles, only: [:index] do
+    get '/profiles', to: 'profiles#index'
+  end
+
+  resources :cards, only: [:index] do
+    get '/cards', to: 'cards#index'
+  end
+
+  resources :identity_informations, only: [:index] do
+    get '/identity_informations', to: 'identity_informations#index'
+  end
+
+  resources :cards, only: [:index] do
+    get '/cards', to: 'cards#index'
+  end
+
 end

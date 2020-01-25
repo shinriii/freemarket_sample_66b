@@ -1,0 +1,2 @@
+class IdentityInformationsController < ApplicationController
+end

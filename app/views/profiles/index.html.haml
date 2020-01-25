@@ -1,0 +1,15 @@
+= render partial: './items/header'
+.main1
+  = render partial: './mypages/side-bar'
+  .edit-box
+    .edit-box__content 
+      %h2.edit-box__content__profile__head プロフィール
+      %form{action: "https://www.mercari.com/jp/mypage/profile/", method: "post"}
+        .edit-box__content__profile__head__icon
+          = image_tag "/yFfb0oqs.jpg", class: 'edit-box__content__profile__head__icon__image'
+          %input.edit-box__content__profile__head__icon__input-box{placeholder: "例)太郎", type: "text"}/
+        .edit-box__content__profile__head__setting
+          %textarea.edit-box__content__profile__head__setting__textarea-box{placeholder: "例)こんにちは！ご覧いただきありがとうございます！古着や雑貨などを中心に出品しています。ご質問などがありましたらお気軽にどうぞ！"}
+          %button.edit-box__content__profile__head__setting__btn.btn-red{type: "submit"} 変更する
+= render partial: './items/footer'
+
