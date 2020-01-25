@@ -728,6 +728,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    a{
+      height: 50px;
+      width: 185px;
+    }
     h1 {
       width: 30%;
       padding-right: 20px;
@@ -745,7 +749,7 @@
         justify-content: end;
         text-align: center;
         margin: 0 10px;
-        
+        .procedure_one {
           font-size: 12px;
           width: 20%;
           position: relative;
@@ -893,7 +897,7 @@
       }
     }
   }
-
+}
 
 
 .single-footer {

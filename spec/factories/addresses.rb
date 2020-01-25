@@ -5,7 +5,7 @@ FactoryBot.define do
     address_kana_firstname { "ヤマダ" }
     address_kana_lastname { "タロウ" }
     zipcode { "111-1111" }
-    prefectures {  "福岡県" }
+    prefecture_id { 1 }
     municipalities { "福岡市中央区福岡町" }
     address { "1-1" }
   end
