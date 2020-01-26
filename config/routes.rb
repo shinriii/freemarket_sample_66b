@@ -9,10 +9,12 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
   end
 
-  root 'items#index'  # ログインor新規登録を選ぶページ
-  get 'items_new_path', to: 'items#new' #商品出品ページ
-  post 'items', to: 'items#create'
-  resources :items, only: [:index, :new, :create]
+  root 'items#index'
+  resource :items do
+    get '/items/new', to: 'items#new'
+    post 'items', to: 'items#create' 
+    get '/items', to: 'items#show'
+  end
 
   resources :signup , only: [:index] do
       get '/signup/index', to:'signup#index'
@@ -40,6 +42,10 @@ Rails.application.routes.draw do
 
   resources :logouts, only: [:index] do
     get '/logouts', to: 'logouts#index'
+  end
+
+  resources :buys, only: [:index] do
+    get '/buys', to: 'buys#index'
   end
 
 end
