@@ -1,34 +1,100 @@
-%h2 会員情報入力
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :ニックネーム
-    %br/
-    = f.text_field :nickname, autofocus: true
-  .field
-    = f.label :メールアドレス
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  -# - if @sns_id.present?
-  -#   = hidden_field_tag :sns_auth, true
-  -# - else
-  .field
-    = f.label :パスワード
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :お名前（全角）
-    %br/
-    = f.text_field :firstname
-    = f.text_field :lastname
-  .field
-    = f.label :お名前カナ（全角）
-    %br/
-    = f.text_field :kana_firstname
-    = f.text_field :kana_lastname
-  .field
-    = f.label :生年月日
-    %br/
-    = f.date_select :birthday, start_year: 1950, end_year: 2020
-    %br/
-    = f.submit "Next"
+%header.single-header-one
+  .header-min
+    = link_to root_path do
+      = image_tag  "/fmarket_logo_red.svg"
+    %nav
+      %ol.clearfix
+        %li.procedure_one
+          会員情報
+          %br/
+          .progress-status
+        %li.procedure_two
+          電話番号認証
+          %br/
+          .progress-status
+        %li.procedure_three
+          お届け先住所
+          %br/
+          .progress-status
+        %li.procedure_four
+          支払い方法
+          %br/
+          .progress-status
+        %li.procedure_five
+          完了
+          %br/
+          .progress-status
+.main
+  .main__box
+    %h2.main__box__head 会員情報入力
+    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .main__box__form
+        .main__box__form__first-box
+          .main__box__form__first-box__group1
+            = f.label :ニックネーム
+            %span.main__box__form__first-box__group1__require 必須
+            %br/
+            = f.text_field :nickname, class:'main__box__form__first-box__group1__input', placeholder: "例) 太郎"
+          .main__box__form__first-box__group1
+            = f.label :メールアドレス
+            %span.main__box__form__first-box__group1__require 必須
+            %br/
+            = f.text_field :email, class:'main__box__form__first-box__group1__input', placeholder: "PC・携帯どちらでも可"
+          - if @sns_id.present?
+            = hidden_field_tag :sns_auth, true
+          - else
+            .main__box__form__first-box__group1.main__box__form__first-box__group1__password
+              = f.label :パスワード
+              %span.main__box__form__first-box__group1__require 必須
+              %br/
+              = f.password_field :password, class:'main__box__form__first-box__group1__input',placeholder: "7文字以上の半角英数字"
+              %p.main__box__form__first-box__group1__password__text ※英字と数字の両方を含めて設定してください
+              .main__box__form__first-box__group1__password__box
+                .main__box__form__first-box__group1__password__box__check-box
+                  %input{type: "checkbox"}/
+                  %i{class: "main__box__form__first-box__group1__password__box__check-box__icon-check"}
+                  %label{for: "reveal_password"} パスワードを表示する
+          .main__box__form__first-box__group1
+            %h3.main__box__form__first-box__group1__person 本人確認
+            %p.main__box__form__first-box__group1__text 安心・安全ご利用いただくために、お客様の本人情報お客様の本人情報の登録にお客様の本人情報の登録にご協力ください。他のお客様に公開されることはありません。
+          .main__box__form__first-box__group1
+            .main__box__form__first-box__group1__name
+              = f.label :お名前（全角）
+              %span.main__box__form__first-box__group1__require 必須
+              %br/
+            = f.text_field :firstname,class:'main__box__form__first-box__group1__name-box',placeholder: "例) 山田"
+            = f.text_field :lastname,class:'main__box__form__first-box__group1__name-box',placeholder: "例) 太郎"
+          .main__box__form__first-box__group1
+            .main__box__form__first-box__group1__name-read
+              = f.label :お名前カナ（全角）
+              %span.main__box__form__first-box__group1__require 必須
+              %br/
+            = f.text_field :kana_firstname,class: 'main__box__form__first-box__group1__name-box',placeholder: "例) ヤマダ"
+            = f.text_field :kana_lastname,class:'main__box__form__first-box__group1__name-box',placeholder: "例) タロウ"
+          .main__box__form__first-box__group1
+            = f.label :生年月日
+            %span.main__box__form__first-box__group1__require 必須
+            %br/
+            = f.date_select  :birthday, class:'main__box__form__first-box__group1__select', start_year: 1950, end_year: 2020
+            %p.main__box__form__first-box__info ※本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
+          .main__box__form__first-box
+            .main__box__form__first-box__group1
+              %p.main__box__form__first-box__group1__text-center 
+                「次へ進む」のボタンを押すことにより、
+                = link_to '' "利用規約"
+                に同意したものとみなします
+            = f.submit "次へ進む", class: "button"
+          .main__box__form__first-box__group1__text-right
+            %p
+              = link_to '' "本人情報の登録について"
+
+          .main__box__form__first-box__group1__recaptcha
+            %p
+              This site is protected by reCAPTCHA and the Google
+              = link_to '' "Privacy Policy"
+              and
+              = link_to '' "Terms of Service"
+              apply.
+= render partial: './signup/footer'

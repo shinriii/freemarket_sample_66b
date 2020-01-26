@@ -1,0 +1,19 @@
+= render partial: 'header'
+.wrapper
+  .container
+    %h2.container__header 新規会員登録
+    .container__btn-list
+      .container__btn-list__box
+        = link_to new_user_registration_path, method: :get, class:'container__btn-list__box__mail-btn' do
+          .container__btn-list__box__mail-btn__box
+            %i.far.fa-envelope
+            %p メールアドレスで登録
+        = link_to user_facebook_omniauth_authorize_path, method: :post, class:'container__btn-list__box__facebook-btn' do
+          .container__btn-list__box__facebook-btn__box
+            %i.fab.fa-facebook-square
+            %p Facebookで登録
+        = link_to user_google_oauth2_omniauth_authorize_path, method: :post, class:'container__btn-list__box__google-btn' do
+          .container__btn-list__box__google-btn__box
+            %i.fab.fa-google
+            %p Googleで登録
+= render partial: 'footer'

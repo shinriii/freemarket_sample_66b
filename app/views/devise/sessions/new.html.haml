@@ -1,17 +1,24 @@
-%h2 Log in
+= render partial: './signup/header'
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+  .total
+    .total__box
+      .total__box__login
+        = link_to signup_index_path, class:'total__box__login__box' do
+          %p アカウントをお持ちでない方はこちら
+          .total__box__login__box__new 新規会員登録
+        .total__box__login__box-2
+          .total__box__login__box-2__btn-facebook
+            %i.total__box__login__box-2__btn-facebook.fab.fa-facebook-square
+            %p facebookでログイン
+          .total__box__login__box-2__btn-google
+            .total__box__login__box-2__btn-google__icon.fab.fa-google 
+            %p Googleでログイン
+        .total__box__login__box-3
+          .total__box__login__box-3__form
+            .total__box__login__box-3__form__box
+              = f.email_field :email, autofocus: true,placeholder: "メールアドレス",class:'total__box__login__box-3__form__box__email', autocomplete: "email"
+            .total__box__login__box-3__form__box
+              = f.password_field :password, placeholder: "パスワード",class:'total__box__login__box-3__form__box__email',autocomplete: "current-password"                  
+            = f.submit "ログイン", class:'total__box__login__box-3__form__login-submit'
+            .total__box__login__box-3__form__note パスワードをお忘れの方
+= render partial: './signup/footer'

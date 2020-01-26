@@ -9,6 +9,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    a{
+      height: 50px;
+      width: 185px;
+    }
     h1 {
       width: 30%;
       padding-right: 20px;
@@ -357,7 +361,10 @@
 .new-header-three {
   width: 100%;
   height: 128px;
-  
+  a{
+    height: 50px;
+    width: 185px;
+  }
   .header-min {
     padding-top: 30px;
     margin: 0 auto;
@@ -721,6 +728,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    a{
+      height: 50px;
+      width: 185px;
+    }
     h1 {
       width: 30%;
       padding-right: 20px;
@@ -738,7 +749,7 @@
         justify-content: end;
         text-align: center;
         margin: 0 10px;
-        
+        .procedure_one {
           font-size: 12px;
           width: 20%;
           position: relative;
@@ -886,7 +897,7 @@
       }
     }
   }
-
+}
 
 
 .single-footer {
@@ -919,18 +930,17 @@
 // 1ページ目
 
 .main{
-  height: 1311px;
-  width: 1199px;
+  height: 100%;
   margin: 0 auto;
 
   &__box{
-      height: 1311px;
+      height: 100%;
       width: 700px;
       background-color: white;
       margin: 0 auto;
 
       &__head{
-          height: 97px;
+          height: 100%;
           width: 700px;
           font-size: 22px;
           padding: 32px;
@@ -939,7 +949,7 @@
       }
 
       &__form{
-          height: 1214px;
+          height: 100%;
           width: 700px;
           padding: 40px 40px 64px;
           border-top: 1px solid #f5f5f5;
@@ -951,7 +961,7 @@
               width: 343px;
               margin: 0 auto;
 
-              button{
+              .button{
                   height: 50px;
                   width: 343px;
                   background-color: red;
@@ -1003,19 +1013,9 @@
                   .label{
                       text-align: left;
                   }
-
-                  &__birthday{
-                      display: flex;
-
-                      &__select{
-                        width: 76px;
-                        &__box{
-                          height: 48px;
-                          width: 76px;
-                          background-color: white;
-  
-                          }
-                      }
+                  select{
+                    width: 100px;
+                    height: 48px;
                   }
 
                   &__name-box{
@@ -1188,7 +1188,7 @@
 
 // 3ページ目
 .page-three {
-  width: 672px;
+  width: 700px;
   background-color: white;
   margin: 0 auto;
   font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
@@ -1218,7 +1218,6 @@
           background-color: gray;
         }
         input {
-          height: 30px;
           width: 100%;
           padding: 10px 16px 8px;
           border-radius: 4px;
@@ -1226,7 +1225,6 @@
           background: #fff;
           line-height: 1.5;
           font-size: 16px;
-          display: block;
           margin: 8px auto;
         }
         select {
@@ -1239,7 +1237,7 @@
           align-items: center;
         }
       }
-      button {
+      .button {
         display: block;
         width: 377px;
         line-height: 48px;

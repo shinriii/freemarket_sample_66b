@@ -11,11 +11,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    if params[:sns_auth] == 'true'
-      pass = Devise.friendly_token
-      params[:user][:password] = pass
-      params[:user][:password_confirmation] = pass
-    end
     #バリデーションチェック
     @user = User.new(sign_up_params)
     unless @user.valid?
@@ -40,6 +35,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.build_address(@address.attributes)
     @user.save
     sign_in(:user, @user)
+  end
+
+  def create_sns
+    if params[:sns_auth] == 'true'
+      pass = Devise.friendly_token
+      params[:user][:password] = pass
+      params[:user][:password_confirmation] = pass
+    end
+    super
   end
 
   # GET /resource/edit
@@ -71,7 +75,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def address_params
     params.require(:address).permit(
       :address_firstname, :address_lastname, :address_kana_firstname, :address_kana_lastname,
-      :zipcode, :prefectures, :municipalities, :address, :building, :phone_number
+      :zipcode, :prefecture_id, :municipalities, :address, :building, :phone_number
     )
   end
 
