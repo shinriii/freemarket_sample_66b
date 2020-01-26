@@ -1,3 +1,4 @@
+= render partial: './items/header'
 .product
   .product__item
     %h1.product__item__name バッグ
@@ -54,7 +55,7 @@
       %span.product__item__price-box__price ¥1,200
       %span.product__item__price-box__tax (税込)
       %span.product__item__price-box__shipping-fee 送料込み
-    = link_to "#" do
+    = link_to buys_path do
       .product__item__buy-btn
         購入画面に進む
 
@@ -220,3 +221,4 @@
               %h3.product__image__box__content__box__body__name louis vuitton ハンドバッグ pop
               .product__image__box__content__box__body__num
                 .product__image__box__content__box__body__num__price ¥9,500
+= render partial: './items/footer'
