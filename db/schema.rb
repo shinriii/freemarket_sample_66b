@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_20_145413) do
+ActiveRecord::Schema.define(version: 2020_01_22_060605) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -39,12 +39,11 @@ ActiveRecord::Schema.define(version: 2020_01_20_145413) do
     t.string "address_kana_firstname", null: false
     t.string "address_kana_lastname", null: false
     t.string "zipcode", null: false
-    t.string "prefectures", null: false
     t.string "municipalities", null: false
     t.text "address", null: false
     t.string "building"
     t.bigint "phone_number"
-    t.integer "prefecture_id"
+    t.integer "prefecture_id", null: false
     t.string "city"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -56,6 +55,32 @@ ActiveRecord::Schema.define(version: 2020_01_20_145413) do
     t.string "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image"
+    t.string "name"
+    t.string "description"
+    t.integer "price"
+    t.integer "user_id"
+    t.integer "condition_id"
+    t.integer "prefecture_id"
+    t.integer "delivery_days_id"
+    t.integer "delivery_burden_id"
+    t.integer "brand_id"
+    t.integer "size_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "provider"
+    t.string "uid"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_sns_credentials_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -77,4 +102,5 @@ ActiveRecord::Schema.define(version: 2020_01_20_145413) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "sns_credentials", "users"
 end

@@ -10,8 +10,6 @@ class Address < ApplicationRecord
     validates :zipcode,presence: true
     validates :prefectures,presence: true
     
-    extend ActiveHash::Associations::ActiveRecordExtensions
-    belongs_to_active_hash :prefecture
   end
 
 end

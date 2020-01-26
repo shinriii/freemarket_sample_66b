@@ -70,38 +70,38 @@
                 &__name {
                     font-size: 14px;
                     font-weight: bold;
+                    .name-column {
+                        width: 100%;
+                        margin-top: 10px;
+                        height: 50px;
+                        padding: 0 20px;
+                        border-radius: 5px;
+                        border: 1px solid #ccc;
+                    }
                     span {
                         background-color: red;
                         color: white;
                         padding: 4px;
                         border-radius: 2px;
                     }
-                }
-                input.name-column {
-                    width: 100%;
-                    margin-top: 10px;
-                    height: 50px;
-                    padding: 0 20px;
-                    border-radius: 5px;
-                    border: 1px solid #ccc;
                 }
                 &__description {
                     font-size: 14px;
                     font-weight: bold;
                     margin-top: 30px;
+                    .description-column {
+                        width: 100%;
+                        margin-top: 10px;
+                        height: 150px;
+                        padding: 10px;
+                        border: 1px solid #ccc;
+                    }
                     span {
                         background-color: red;
                         color: white;
                         padding: 4px;
                         border-radius: 2px;
                     }
-                }
-                textarea.description-column {
-                    width: 100%;
-                    margin-top: 10px;
-                    height: 150px;
-                    padding: 10px;
-                    border: 1px solid #ccc;
                 }
             }
             &__details {
@@ -295,7 +295,7 @@
                         }
                         &__right {
                             font-size: 14px;
-                            input.price {
+                            .value {
                                 height: 50px;
                                 border-radius: 5px;
                                 border: 1px solid #ccc;
@@ -333,7 +333,7 @@
                         color: #0099e8;
                     }
                 }
-                button.exhibition {
+                .exhibition {
                     background-color: red;
                     width: 100%;
                     color: white;

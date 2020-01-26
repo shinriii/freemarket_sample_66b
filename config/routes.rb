@@ -10,4 +10,7 @@ Rails.application.routes.draw do
   end
   root 'items#index'  # ログインor新規登録を選ぶページ
   resources :users, only: :new  # 新規登録方法を選ぶページ
+  get 'items_new_path', to: 'items#new' #商品出品ページ
+  post 'items', to: 'items#create'
+  resources :items, only: [:index, :new, :create]
 end
