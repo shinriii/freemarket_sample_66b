@@ -8,9 +8,11 @@ Rails.application.routes.draw do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
   end
- 
-  root 'items#index'
-  get 'items/new', to: 'items#new'
+
+  root 'items#index'  # ログインor新規登録を選ぶページ
+  get 'items_new_path', to: 'items#new' #商品出品ページ
+  post 'items', to: 'items#create'
+  resources :items, only: [:index, :new, :create]
 
   resources :signup , only: [:index] do
       get '/signup/index', to:'signup#index'
