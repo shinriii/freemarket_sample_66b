@@ -1,0 +1,8 @@
+= render partial: './items/header'
+.main1
+    = render partial: './mypages/side-bar'
+    .total-box
+        .total-box__inner
+            .total-box__inner__box
+                = button_to 'ログアウト', destroy_user_session_path, method: :delete, class:'total-box__inner__box__btn-box.btn-red'
+= render partial: './items/footer'

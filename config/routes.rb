@@ -36,4 +36,8 @@ Rails.application.routes.draw do
     get '/cards', to: 'cards#index'
   end
 
+  resources :logouts, only: [:index] do
+    get '/logouts', to: 'logouts#index'
+  end
+
 end
