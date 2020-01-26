@@ -3,7 +3,6 @@
 }
 
 .total{
-  height: 1079px;
   &__box{
     height: 731px;
     &__login{
@@ -98,7 +97,9 @@
             // width: 26px;
             margin-left: 15px;
             line-height: 50px;
-            color: red;
+            background: -webkit-linear-gradient(top, red, orange, green, blue);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
           }
           p{
             font-size: 14px;
@@ -127,6 +128,7 @@
         }
       }
       &__box{
+        display: block;
         padding: 40px 64px;
         height: 144px;
         text-align: center;
