@@ -1,4 +1,4 @@
-= render partial: './signup/header'
+= render partial: './header_footer/signup_header'
 = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .total
     .total__box
@@ -21,4 +21,4 @@
               = f.password_field :password, placeholder: "パスワード",class:'total__box__login__box-3__form__box__email',autocomplete: "current-password"                  
             = f.submit "ログイン", class:'total__box__login__box-3__form__login-submit'
             .total__box__login__box-3__form__note パスワードをお忘れの方
-= render partial: './signup/footer'
+= render partial: './header_footer/signup_footer'

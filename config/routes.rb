@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     get '/items/new', to: 'items#new'
     post 'items', to: 'items#create' 
     get '/items', to: 'items#show'
+    collection do
+      get 'purchase'
+      post 'purchase'
+    end
   end
 
   resources :signup , only: [:index] do
