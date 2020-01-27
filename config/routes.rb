@@ -48,7 +48,5 @@ Rails.application.routes.draw do
     get '/buys', to: 'buys#index'
   end
 
-  
-  get '/items/:id', to: 'items#show'
-  
+  resources :items, only: :show
 end
