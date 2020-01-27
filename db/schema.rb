@@ -39,11 +39,12 @@ ActiveRecord::Schema.define(version: 2020_01_25_071333) do
     t.string "address_kana_firstname", null: false
     t.string "address_kana_lastname", null: false
     t.string "zipcode", null: false
-    t.string "prefectures", null: false
     t.string "municipalities", null: false
     t.text "address", null: false
     t.string "building"
     t.bigint "phone_number"
+    t.integer "prefecture_id", null: false
+    t.string "city"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -68,6 +69,9 @@ ActiveRecord::Schema.define(version: 2020_01_25_071333) do
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "image"
     t.string "name"
+    t.string "category"
+    t.string "brand"
+    t.string "delivery_origin"
     t.string "description"
     t.integer "price"
     t.integer "user_id"
