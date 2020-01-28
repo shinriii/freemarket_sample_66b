@@ -12,6 +12,7 @@ class User < ApplicationRecord
    validates :kana_firstname, :kana_lastname, presence: true
   has_one :address
   has_many :sns_credentials
+  has_many :items
   has_many :cards
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
