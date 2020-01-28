@@ -142,12 +142,10 @@
                     }
                 }
                 &__bottom-box {
-                    padding-top: 20px;
-                    button.buy {
-                        background-color: red;
-                        width: 100%;
-                        height: 50px;
-                        color: white;
+                    form{
+                        #payjp_checkout_box{
+                            text-align: center;
+                        }
                     }
                 }
             }

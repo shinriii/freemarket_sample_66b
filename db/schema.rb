@@ -74,7 +74,6 @@ ActiveRecord::Schema.define(version: 2020_01_25_071333) do
     t.string "delivery_origin"
     t.string "description"
     t.integer "price"
-    t.integer "user_id"
     t.integer "condition_id"
     t.integer "prefecture_id"
     t.integer "delivery_days_id"
@@ -82,8 +81,10 @@ ActiveRecord::Schema.define(version: 2020_01_25_071333) do
     t.integer "brand_id"
     t.integer "size_id"
     t.integer "category_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -115,5 +116,6 @@ ActiveRecord::Schema.define(version: 2020_01_25_071333) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cards", "users"
+  add_foreign_key "items", "users"
   add_foreign_key "sns_credentials", "users"
 end

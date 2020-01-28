@@ -1,7 +1,8 @@
 = render partial: './items/header'
 .product
   .product__item
-    %h1.product__item__name バッグ
+    %h1.product__item__name 
+      = @item.name
     .product__item__main
       .product__item__main__photo
         = image_tag "/319531408.jpg", style: "opacity: 1;"
@@ -16,7 +17,7 @@
             .product__item__main__detail__tbody__tr__th 出品者
             .product__item__main__detail__tbody__tr__td
               .product__item__main__detail__tbody__tr__td__name
-                = @item.name
+                = @item.user.nickname
               .product__item__main__detail__tbody__tr__td__icon
                 .product__item__main__detail__tbody__tr__td__icon__rating
                   %i.product__item__main__detail__tbody__tr__td__icon__rating.fas.fa-laugh
@@ -56,10 +57,11 @@
             .product__item__main__detail__tbody__tr-8__td 4日~7日で発送
 
     .product__item__price-box
-      %span.product__item__price-box__price ¥1,200
+      %span.product__item__price-box__price 
+        = @item.price
       %span.product__item__price-box__tax (税込)
       %span.product__item__price-box__shipping-fee 送料込み
-    = link_to buys_path do
+    = link_to item_purchase_path(@item.id) do
       .product__item__buy-btn
         購入画面に進む
 
