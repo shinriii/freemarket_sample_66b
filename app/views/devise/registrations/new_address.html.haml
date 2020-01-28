@@ -72,16 +72,4 @@
           %br/
           = f.text_field :phone_number, placeholder: "例) 09012345678"
         = f.submit "次へ進む", class:"button"
-%footer.single-footer
-  %nav
-    %ul.clearfix
-      %li
-        %link_to{href: ""} プライバシーポリシー
-      %li
-        %link_to{href: ""} メルカリ利用規約
-      %li
-        %link_to{href: ""} 特定商取引に関する表記
-  %link_to{href: "/"}
-    %img{alt: "Fmarket", src: "/logo_gray.svg", height: "80", width: "65",}
-  %p
-    %small © Fmarket, Inc.
+= render partial: './header_footer/signup_footer'

@@ -15,12 +15,14 @@
                         %span 必須
                     %p.column 最大10枚までアップロードできます
                     %label
+
                         = f.fields_for :images do |i|
                             .all__main__contents__images__square
                                 ドラッグアンドドロップ
                                 %br/
                                 またはクリックしてファイルをアップロード
                                 = i.file_field :src
+
                         
                     
 

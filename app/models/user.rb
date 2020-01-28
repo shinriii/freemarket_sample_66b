@@ -3,17 +3,25 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
    devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:facebook, :google_oauth2]
- 
-   validates :nickname, :firstname, :lastname, :birthday, presence: true
-   validates :password, presence: true, length: { minimum: 7 }, 
-             # 英数字のみ可
-             format: { with: /\A[a-z0-9]+\z/i, message: "is must NOT contain any other characters than alphanumerics." }
-   validates :email, presence: true,uniqueness: true
-   validates :kana_firstname, :kana_lastname, presence: true
+  
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  VALID_KATAKANA_REGEX = /\A[\p{katakana}\p{blank}ー－]+\z/
+  VALID_PASSWORD_REGEX = /\A(?=.*?[a-zA-Z])(?=.*?\d)[a-zA-Z\d!@#\$%\^\&*\)\(+=._-]{7,128}\z/i
+
+  validates :nickname, :birthday, presence: true
+  validates :email, presence: true, uniqueness: true, format: { with: VALID_EMAIL_REGEX, message: 'のフォーマットが不適切です'}
+  validates :lastname, presence: true, length: { maximum: 35 }
+  validates :firstname, presence: true, length: { maximum: 35 }
+  validates :password, presence: true, length: { in: 7..128 }, format: { with: VALID_PASSWORD_REGEX, message: 'は英字と数字両方を含むパスワードを設定してください'}
+  validates :kana_firstname, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
+  validates :kana_lastname, presence: true, length: { maximum: 35 }, format: { with: VALID_KATAKANA_REGEX, message: 'はカタカナで入力して下さい'}
+
   has_one :address
   has_many :sns_credentials
   has_many :items
   has_many :cards
+  has_many :items
+
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
     # sns認証したことがあればアソシエーションで取得
