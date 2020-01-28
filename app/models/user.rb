@@ -18,6 +18,7 @@ class User < ApplicationRecord
 
   has_one :address
   has_many :sns_credentials
+  has_many :items
   has_many :cards
   has_many :items
 
