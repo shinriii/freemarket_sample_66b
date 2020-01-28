@@ -2,13 +2,18 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all
   end
+
+  def confirm
+    @item = Item.find(params[:item_id])
+  end
   require 'payjp'
 
   def purchase
-    Payjp.api_key = "秘密鍵"
+    Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
+    @item = Item.find(params[:item_id])
     Payjp::Charge.create(
-      amount: 809, # 決済する値段
-      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+      amount: @item.price, 
+      card: params['payjp-token'], 
       currency: 'jpy'
     )
   end
@@ -28,7 +33,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:item_id])
   end
 
   private

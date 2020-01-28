@@ -10,14 +10,12 @@ Rails.application.routes.draw do
   end
 
   root 'items#index'
-  resource :items do
-    get '/items/new', to: 'items#new'
+  resources :items do
+    get 'new_item', to: 'items#new'
     post 'items', to: 'items#create' 
-    get '/items', to: 'items#show'
-    collection do
-      get 'purchase'
-      post 'purchase'
-    end
+    get 'show', to: 'items#show'
+    get 'confirm'
+    post 'purchase'
   end
 
   resources :signup , only: [:index] do
@@ -47,10 +45,4 @@ Rails.application.routes.draw do
   resources :logouts, only: [:index] do
     get '/logouts', to: 'logouts#index'
   end
-
-  resources :buys, only: [:index] do
-    get '/buys', to: 'buys#index'
-  end
-
-  resources :items, only: :show
 end

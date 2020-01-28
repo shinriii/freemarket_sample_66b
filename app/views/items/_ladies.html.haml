@@ -1,3 +1,93 @@
+- @items.each do |item|
+  .contents__items
+    .contents__items__main-box
+      .contents__items__main-box__items-header
+        %h3.contents__items__main-box__items-header__title レディース新着アイテム
+        = link_to 'もっと見る >', '#', class: 'contents__items__main-box__items-header__button' 
+      %ul.contents__items__main-box__items
+        %li.contents__items__main-box__items__list
+          = link_to item_show_path(item.id), class: 'contents__items__main-box__items__list__link' do
+            .contents__items__main-box__items__list__link__box
+              .contents__items__main-box__items__list__link__box__img-box
+                = image_tag "/ladies.jpg"
+                .contents__items__main-box__items__list__link__box__img-box__price-box
+                  %span ¥1,200
+              .contents__items__main-box__items__list__link__box__desc-box
+                %span 着物 正絹 羽織り　躾ついています　17万　はお-11
+        %li.contents__items__main-box__items__list
+          = link_to '#', class: 'contents__items__main-box__items__list__link' do
+            .contents__items__main-box__items__list__link__box
+              .contents__items__main-box__items__list__link__box__img-box
+                = image_tag "/ladies.jpg"
+                .contents__items__main-box__items__list__link__box__img-box__price-box
+                  %span ¥1,200
+              .contents__items__main-box__items__list__link__box__desc-box
+                %span 着物 正絹 羽織り　躾ついています　17万　はお-11
+        %li.contents__items__main-box__items__list
+          = link_to '#', class: 'contents__items__main-box__items__list__link' do
+            .contents__items__main-box__items__list__link__box
+              .contents__items__main-box__items__list__link__box__img-box
+              
+                = image_tag "/ladies.jpg"
+                .contents__items__main-box__items__list__link__box__img-box__price-box
+                  %span ¥1,200
+              .contents__items__main-box__items__list__link__box__desc-box
+                %span 着物 正絹 羽織り　躾ついています　17万　はお-11
+        %li.contents__items__main-box__items__list
+          = link_to '#', class: 'contents__items__main-box__items__list__link' do
+            .contents__items__main-box__items__list__link__box
+              .contents__items__main-box__items__list__link__box__img-box
+                = image_tag "/ladies.jpg"
+                .contents__items__main-box__items__list__link__box__img-box__price-box
+                  %span ¥1,200
+              .contents__items__main-box__items__list__link__box__desc-box
+                %span 着物 正絹 羽織り　躾ついています　17万　はお-11
+        %li.contents__items__main-box__items__list
+          = link_to '#', class: 'contents__items__main-box__items__list__link' do
+            .contents__items__main-box__items__list__link__box
+              .contents__items__main-box__items__list__link__box__img-box
+                = image_tag "/ladies.jpg"
+                .contents__items__main-box__items__list__link__box__img-box__price-box
+                  %span ¥1,200
+              .contents__items__main-box__items__list__link__box__desc-box
+                %span 着物 正絹 羽織り　躾ついています　17万　はお-11
+        %li.contents__items__main-box__items__list
+          = link_to '#', class: 'contents__items__main-box__items__list__link' do
+            .contents__items__main-box__items__list__link__box
+              .contents__items__main-box__items__list__link__box__img-box
+                = image_tag "/ladies.jpg"
+                .contents__items__main-box__items__list__link__box__img-box__price-box
+                  %span ¥1,200
+              .contents__items__main-box__items__list__link__box__desc-box
+                %span 着物 正絹 羽織り　躾ついています　17万　はお-11
+        %li.contents__items__main-box__items__list
+          = link_to '#', class: 'contents__items__main-box__items__list__link' do
+            .contents__items__main-box__items__list__link__box
+              .contents__items__main-box__items__list__link__box__img-box
+                = image_tag "/ladies.jpg"
+                .contents__items__main-box__items__list__link__box__img-box__price-box
+                  %span ¥1,200
+              .contents__items__main-box__items__list__link__box__desc-box
+                %span 着物 正絹 羽織り　躾ついています　17万　はお-11
+        %li.contents__items__main-box__items__list
+          = link_to '#', class: 'contents__items__main-box__items__list__link' do
+            .contents__items__main-box__items__list__link__box
+              .contents__items__main-box__items__list__link__box__img-box
+                = image_tag "/ladies.jpg"
+                .contents__items__main-box__items__list__link__box__img-box__price-box
+                  %span ¥1,200
+              .contents__items__main-box__items__list__link__box__desc-box
+                %span 着物 正絹 羽織り　躾ついています　17万　はお-11
+        %li.contents__items__main-box__items__list
+          = link_to '#', class: 'contents__items__main-box__items__list__link' do
+            .contents__items__main-box__items__list__link__box
+              .contents__items__main-box__items__list__link__box__img-box
+                = image_tag "/ladies.jpg"
+                .contents__items__main-box__items__list__link__box__img-box__price-box
+                  %span ¥1,200
+              .contents__items__main-box__items__list__link__box__desc-box
+                %span 着物 正絹 羽織り　躾ついています　17万　はお-11
+
 .contents__items
   .contents__items__main-box
     .contents__items__main-box__items-header
@@ -5,10 +95,18 @@
       = link_to 'もっと見る >', '#', class: 'contents__items__main-box__items-header__button' 
     %ul.contents__items__main-box__items
       - @items.each do |item|
+
         %li.contents__items__main-box__items__list
           = link_to '#', class: 'contents__items__main-box__items__list__link' do
             .contents__items__main-box__items__list__link__box
               .contents__items__main-box__items__list__link__box__img-box
+
+                = image_tag "/ladies.jpg"
+                .contents__items__main-box__items__list__link__box__img-box__price-box
+                  %span ¥1,200
+              .contents__items__main-box__items__list__link__box__desc-box
+                %span 着物 正絹 羽織り 躾ついています 17万 はお-11
+
                 - @images.each do |image|
                   = image_tag image.src
                 .contents__items__main-box__items__list__link__box__img-box__price-box
@@ -16,3 +114,4 @@
                   %span= item.price
               .contents__items__main-box__items__list__link__box__desc-box
                 %span= item.name
+
