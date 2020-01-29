@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @items = Item.includes(:images).order('created_at DESC')
   end
 
   def confirm
@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
       card: params['payjp-token'], 
       currency: 'jpy'
     )
+    redirect_to root_path
   end
 
   def new
@@ -24,6 +25,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path

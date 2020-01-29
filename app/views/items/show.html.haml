@@ -7,9 +7,6 @@
       .product__item__main__photo
         = image_tag "/319531408.jpg", style: "opacity: 1;"
         .product__item__main__photo__bottom
-          = image_tag "/h-i289.jpg"
-          = image_tag "/vuitton2.jpg"
-          = image_tag "/vuitton3.jpeg"
 
       .product__item__main__detail
         .product__item__main__detail__tbody
@@ -61,22 +58,13 @@
         = @item.price
       %span.product__item__price-box__tax (税込)
       %span.product__item__price-box__shipping-fee 送料込み
-    = link_to item_purchase_path(@item.id) do
+    = link_to item_confirm_path(@item.id) do
       .product__item__buy-btn
         購入画面に進む
 
     .product__item__description
       %p.product__item__description__inner
-        2000円→1200円にお値下げいたします。
-        %br
-        %br
-        定番のバッグで、大きさもしっかりあり、マザーズバッグやビジネスバッグになるかと思います。
-        %br
-        %br
-        革特有のシワ感が少しありますが、リペアクリーニング済みのため目立った傷スレ汚れはないかと思います。作りがしっかりしてますので、まだまだデイリーに使えるかと思います。
-        %br
-        %br
-        used品のためご理解頂ける方にお譲り致します。
+        = @item.description
 
     .product__item__text-box
       .product__item__text-box__left
