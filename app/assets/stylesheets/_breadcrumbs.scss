@@ -1,0 +1,22 @@
+.breadcrumbs {
+ 
+  border-top: 1px solid #eee;
+  background: #ffff;
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+
+    &__list {
+      margin: 0 auto;
+      height: 48px;
+      width: 1020px;
+      line-height: 48px;
+    }
+
+    a {
+      margin-right: 8px;
+      color: black;
+    }
+    .current {
+      margin-left: 8px;
+    }
+  }

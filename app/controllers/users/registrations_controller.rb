@@ -33,7 +33,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_address and return
     end
     @user.build_address(@address.attributes)
-    @user.save
+    @user.save!
     sign_in(:user, @user)
   end
 
