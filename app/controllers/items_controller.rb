@@ -1,16 +1,22 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.all
+    @items = Item.includes(:images).order('created_at DESC')
+  end
+
+  def confirm
+    @item = Item.find(params[:item_id])
   end
   require 'payjp'
 
   def purchase
-    Payjp.api_key = "秘密鍵"
+    Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
+    @item = Item.find(params[:item_id])
     Payjp::Charge.create(
-      amount: 809, # 決済する値段
-      card: params['payjp-token'], # フォームを送信すると作成・送信されてくるトークン
+      amount: @item.price, 
+      card: params['payjp-token'], 
       currency: 'jpy'
     )
+    redirect_to root_path
   end
 
   def new
@@ -19,6 +25,7 @@ class ItemsController < ApplicationController
   end
 
   def create
+    # binding.pry
     @item = Item.new(item_params)
     if @item.save
       redirect_to root_path
@@ -28,7 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    @item = Item.find(params[:item_id])
   end
 
   private
