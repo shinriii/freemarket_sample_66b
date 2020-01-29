@@ -94,9 +94,9 @@
         &__list{
           width: 20%;
           padding: 10px;
+          display: block;
           &__link{
             width: 100%;
-            text-decoration: none;
             &__box{
               background-color: white;
               width: 100%;
@@ -106,34 +106,45 @@
                 overflow: hidden;
                 padding: 0 0 100%;
                 &__price-box{
-                  position: absolute;
-                  bottom: 10px;
                   align-items: center;
                   background: rgba(0,0,0,.4);
                   border-radius: 0 14px 14px 0;
+                  bottom: 30%;
                   box-sizing: border-box;
                   color: #fff;
+                  display: inline-flex;
+                  font-size: 17px;
+                  height: 32px;
                   height: 28px;
                   letter-spacing: .02em;
                   margin: 0;
                   padding: 0 12px;
+                  position: absolute;
+                  z-index: 2;
                 }
                 img{
-                  height: 188px;
-                  width: 188px;
+                  height: 100%;
+                  width: 100%;
                   position: absolute;
-                  object-fit: contain;
+                  object-fit: cover;
+                  bottom: 0;
+                  top: 0;
                 }
               }
               &__desc-box{
+                position: absolute;
+                bottom: 0; 
                 box-sizing: border-box;
+                background-color: #ffff;
                 color: #222;
                 font-size: 14px;
-                height: 64px;
+                height: 50px;
+                width: 100%;
                 line-height: 1.4em;
                 padding: 0 12px;
                 white-space: normal;
                 word-break: break-word;
+                padding: 12px;               
               }
             }
           }
