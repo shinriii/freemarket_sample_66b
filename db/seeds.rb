@@ -27,7 +27,6 @@ password: 'hino123456'
 
 Item.create!(
   name:'バッグ',
-  image:'1',
   category:'レディース',
   brand:'ルイヴィトン',
   delivery_origin:'テスト',
@@ -37,8 +36,6 @@ Item.create!(
   prefecture_id:'2',
   delivery_days_id:'1',
   delivery_burden_id:'1',
-  brand_id:'1',
-  size_id:'1',
   category_id:'1',
-  user_id:'1',
+  user_id:'7'
 )
