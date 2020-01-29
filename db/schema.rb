@@ -75,7 +75,6 @@ ActiveRecord::Schema.define(version: 2020_01_28_060019) do
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "image"
     t.string "name"
     t.string "category"
     t.string "brand"
@@ -86,8 +85,6 @@ ActiveRecord::Schema.define(version: 2020_01_28_060019) do
     t.integer "prefecture_id"
     t.integer "delivery_days_id"
     t.integer "delivery_burden_id"
-    t.integer "brand_id"
-    t.integer "size_id"
     t.integer "category_id"
     t.bigint "user_id"
     t.datetime "created_at", null: false

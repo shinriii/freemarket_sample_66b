@@ -5,7 +5,8 @@
       = @item.name
     .product__item__main
       .product__item__main__photo
-        = image_tag "/319531408.jpg", style: "opacity: 1;"
+        - @item.images.each do |image|
+          = image_tag image.src.url
         .product__item__main__photo__bottom
 
       .product__item__main__detail

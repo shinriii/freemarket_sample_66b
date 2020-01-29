@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-    @item = Item.find(params[:item_id])
+    @item = Item.includes(:images).find(params[:item_id])
   end
   require 'payjp'
 
@@ -35,7 +35,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:item_id])
+    @item = Item.includes(:images).find(params[:item_id])
   end
 
   private
