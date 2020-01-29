@@ -37,5 +37,5 @@ Item.create!(
   delivery_days_id:'1',
   delivery_burden_id:'1',
   category_id:'1',
-  user_id:'7'
+  user_id:'3'
 )
