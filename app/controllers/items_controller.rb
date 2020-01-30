@@ -8,7 +8,6 @@ class ItemsController < ApplicationController
   end
 
   require 'payjp'
-  Payjp.api_key = Rails.application.credentials.dig(:payjp, :PAYJP_ACCESS_KEY)
   def purchase
     Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
     @item = Item.find(params[:item_id])
