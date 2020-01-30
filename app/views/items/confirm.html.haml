@@ -58,8 +58,9 @@
                         = link_to '' "変更する"
                 .all__main__contents__buy-box__bottom-box
                     = form_with url: item_purchase_path do
-                        :plain
-                            <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="#{ENV["PAYJP_PUBLIC_KEY"]}"></script>
+                        %script.payjp-button{"data-key" => "PAYJP_PUBLIC_KEY", :src => "https://checkout.pay.jp/", :type => "text/javascript"}
+
+                            -# <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="#{ENV["PAYJP_PUBLIC_KEY"]}"></script>
                             
 
 
