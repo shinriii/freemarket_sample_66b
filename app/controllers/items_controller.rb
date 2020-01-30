@@ -9,7 +9,7 @@ class ItemsController < ApplicationController
 
   require 'payjp'
   def purchase
-    Payjp.api_key = 'sk_test_aad84a247a00212e7cedabec'
+    Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
     @item = Item.find(params[:item_id])
     Payjp::Charge.create(
       amount: @item.price, 
