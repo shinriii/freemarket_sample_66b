@@ -76,9 +76,6 @@ ActiveRecord::Schema.define(version: 2020_01_28_060019) do
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
-    t.string "category"
-    t.string "brand"
-    t.string "delivery_origin"
     t.string "description"
     t.integer "price"
     t.integer "condition_id"
@@ -120,6 +117,7 @@ ActiveRecord::Schema.define(version: 2020_01_28_060019) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "users"

@@ -2,9 +2,6 @@ class CreateItems < ActiveRecord::Migration[5.2]
   def change
     create_table :items do |t|
       t.string :name
-      t.string :category
-      t.string :brand
-      t.string :delivery_origin
       t.string :description
       t.integer :price
       t.integer :condition_id

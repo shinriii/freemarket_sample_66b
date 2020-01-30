@@ -27,9 +27,6 @@ password: 'hino123456'
 
 Item.create!(
   name:'バッグ',
-  category:'レディース',
-  brand:'ルイヴィトン',
-  delivery_origin:'テスト',
   description:'新品です',
   price:'10000',
   condition_id:'1',
@@ -37,5 +34,18 @@ Item.create!(
   delivery_days_id:'1',
   delivery_burden_id:'1',
   category_id:'1',
-  user_id:'3'
-)
+  user_id:'4'
+  )
+
+Address.create!(
+  address_firstname:'日野',
+  address_lastname:'としひろ',
+  address_kana_firstname:'ヒノ',
+  address_kana_lastname:'トシヒロ',
+  zipcode:'888-4444',
+  municipalities:'福岡市博多区',
+  address:'1-1',
+  phone_number:'08095551234',
+  prefecture_id:'1',
+  user_id:'4'
+  )
