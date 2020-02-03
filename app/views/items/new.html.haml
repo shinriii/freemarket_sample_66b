@@ -85,17 +85,17 @@
                                 %span 必須
                             .all__main__contents__prices__right-box__top__right
                                 ¥
-                                = f.number_field :price, placeholder:"                     例)300", class:"value"
+                                = f.number_field :price, id:"price-input", placeholder:"                     例)300", class:"value"
                                 -# %input.price{type:"text", placeholder:"                     例)300"}
                         .all__main__contents__prices__right-box__center
                             .all__main__contents__prices__right-box__center__left
                                 販売手数料(10%)
-                            .all__main__contents__prices__right-box__center__right
+                            .all__main__contents__prices__right-box__center__right{id: "fee"}
                                 %p -
                         .all__main__contents__prices__right-box__bottom
                             .all__main__contents__prices__right-box__bottom__left
                                 販売利益
-                            .all__main__contents__prices__right-box__bottom__right
+                            .all__main__contents__prices__right-box__bottom__right{id: "profit"}
                                 %p -
 
 
