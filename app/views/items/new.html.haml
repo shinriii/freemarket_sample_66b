@@ -36,7 +36,7 @@
                     .all__main__contents__products__description
                         商品の説明
                         %span 必須
-                        = f.text_area :description, placeholder:"商品の説明 (必須1,000文字いない)  (色、素材、重さ、定価、注意点など)    例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでオススメです。", class:"description-column"
+                        = f.text_area :description, placeholder:"商品の説明 (必須1,000文字以内)  (色、素材、重さ、定価、注意点など)    例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでオススメです。", class:"description-column"
 
                     -# %textarea.description-column{placeholder:"商品の説明 (必須1,000文字いない)  (色、素材、重さ、定価、注意点など) 例)        2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでオススメです。"}
                     
@@ -44,11 +44,16 @@
                     .all__main__contents__details__left-box
                         %p 商品の詳細
                     .all__main__contents__details__right-box
-                        .all__main__contents__details__right-box__category
-                            カテゴリー
-                            %span 必須
-                        = f.collection_select :category_id, Category.all, :id, :name, prompt:"---"
-                        
+                        %label#category
+                            .all__main__contents__details__right-box__category
+                                カテゴリー
+                                %span 必須
+                            = f.select :parent_category_id, Category.where(ancestry: nil).collect {|p| [ p.name, p.id, name:p.id ]},{prompt: "---"}, html_options = {class: "select-default", id: "parent-form"}
+
+                        -# = f.select :child_category_id, Category.where(ancestry: nil).collect {|p| [ p.name, p.id, name:p.id ]},{prompt: "---"}, html_options = {class: "select-default", id: "child-form"}
+                        -# = f.select :grandchild_category_id, Category.where(ancestry: nil).collect {|p| [ p.name, p.id, name:p.id ]},{prompt: "---"}, html_options = {class: "select-default", id: "grandchild-form"}
+
+
                         .all__main__contents__details__right-box__condition
                             商品の状態
                             %span 必須
