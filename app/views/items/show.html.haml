@@ -32,7 +32,11 @@
           .product__item__main__detail__tbody__tr-2
             .product__item__main__detail__tbody__tr-2__th カテゴリー
             .product__item__main__detail__tbody__tr-2__td
-              = @item.category_id
+              = @items.category.parent.parent.name
+              %br
+              = @items.category.parent.name
+              %br
+              = @items.category.name
           .product__item__main__detail__tbody__tr-3
             .product__item__main__detail__tbody__tr-3__th ブランド
             .product__item__main__detail__tbody__tr-3__td

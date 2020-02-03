@@ -1,6 +1,10 @@
 class ItemsController < ApplicationController
   def index
     @items = Item.includes(:images).order('created_at DESC')
+    @ladies = Item.where(parent_category_id:'1').order("created_at DESC").limit(10)
+    @mens = Item.where(parent_category_id:'200').order("created_at DESC").limit(10)
+    @elect = Item.where(parent_category_id:'898').order("created_at DESC").limit(10)
+
   end
 
   def confirm
@@ -24,10 +28,18 @@ class ItemsController < ApplicationController
     @item.images.new
   end
 
+  def get_category_children
+    @category_children = Category.find_by(id: "#{params[:parent_id]}",ancestry: nil).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find_by(id: "#{params[:child_id]}").children
+  end
+
   def create
     # binding.pry
     @item = Item.new(item_params)
-    if @item.save
+    if @item.save!
       redirect_to root_path
     else
       new_item_path
@@ -36,11 +48,13 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.includes(:images).find(params[:item_id])
+    @items = Item.find(params[:item_id])
+    
   end
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :price, :condition_id, :prefecture_id, :delivery_days_id, :delivery_burden_id, :category_id, images_attributes: [:src]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :description, :price, :condition_id, :prefecture_id, :delivery_days_id, :delivery_burden_id, :parent_category_id, :child_category_id, :category_id, images_attributes: [:src]).merge(user_id: current_user.id)
   end
   
 end
