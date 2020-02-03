@@ -46,3 +46,4 @@ Rails.application.routes.draw do
     get '/logouts', to: 'logouts#index'
   end
 end
+

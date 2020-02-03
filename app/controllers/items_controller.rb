@@ -6,8 +6,8 @@ class ItemsController < ApplicationController
   def confirm
     @item = Item.includes(:images).find(params[:item_id])
   end
-  require 'payjp'
 
+  require 'payjp'
   def purchase
     Payjp.api_key = ENV["PAYJP_ACCESS_KEY"]
     @item = Item.find(params[:item_id])
