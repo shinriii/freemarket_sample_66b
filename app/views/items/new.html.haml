@@ -77,7 +77,7 @@
                         .all__main__contents__delivery__right-box__dates
                             発送までの日数
                             %span 必須
-                            = f.collection_select :delivery_days_id, DeliveryDay.all,:id,:name, prompt:"---"
+                            = f.collection_select :delivery_day_id, DeliveryDay.all,:id,:name, prompt:"---"
 
                 .all__main__contents__prices
                     .all__main__contents__prices__left-box
