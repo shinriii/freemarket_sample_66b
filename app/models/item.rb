@@ -9,6 +9,6 @@ class Item < ApplicationRecord
     validates :category_id, presence: true
 
     belongs_to :user
-    has_many :images
+    has_many :images, foreign_key: :item_id, dependent: :destroy
     accepts_nested_attributes_for :images
 end
