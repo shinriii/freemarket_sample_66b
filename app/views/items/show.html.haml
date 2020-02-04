@@ -62,6 +62,9 @@
     = link_to item_confirm_path(@item.id) do
       .product__item__buy-btn
         購入画面に進む
+    = link_to item_path(@item), method: :delete do
+      .product__item__delete-btn
+        削除する
 
     .product__item__description
       %p.product__item__description__inner
