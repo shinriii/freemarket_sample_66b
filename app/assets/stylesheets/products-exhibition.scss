@@ -46,13 +46,49 @@
                         font-size: 14px;
                     }
                 }
-                &__square {
-                    height: 100%;
-                    background-color: #f5f5f5;
-                    border: 1px dashed #ccc;
-                    padding: 50px 40px;
-                    text-align: center;
-                    font-size: 14px;
+                .image-box{
+                    display: flex;
+                    .image-lists{
+                        .image-list{
+                            display: none;
+                            height: 100%;
+                            width: 116px;
+                            background-color: #f5f5f5;
+                            position: relative;
+                            text-align: center;
+                            line-height: 44px;
+                            .image{
+                                height: 140px;
+                                background-color: blue;
+                                position: absolute;
+                                top: 2px;
+                                left: 5px;
+                                right: 5px;
+                                object-fit: cover;
+                                img{
+                                    height: 140px;
+                                    width: 106px;
+                                }
+                            }
+                            .image-destroy{
+                                height: 44px;
+                                width: 100%;
+                                background-color: #f5f5f5;
+                                position: absolute;
+                                bottom: 0;
+                                color: #0099e8;
+                            }
+                        }
+                    }
+                    &__square {
+                        height: 100%;
+                        width: 100%;
+                        background-color: #f5f5f5;
+                        border: 1px dashed #ccc;
+                        padding: 50px 40px;
+                        text-align: center;
+                        font-size: 14px;
+                    }
                 }
                 input {
                     display: none;

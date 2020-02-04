@@ -14,15 +14,20 @@
                         出品画像
                         %span 必須
                     %p.column 最大10枚までアップロードできます
-                    %label
+                    %label.image-box
+                        %ul.image-lists
+                            %li.image-list
+                                .image
+                                    %img#preview
+                                .image-destroy
+                                    削除
 
                         = f.fields_for :images do |i|
-                            .all__main__contents__images__square
+                            .image-box__square
                                 ドラッグアンドドロップ
                                 %br/
                                 またはクリックしてファイルをアップロード
-                                = i.file_field :src
-
+                                = i.file_field :src,id: "image-form"
                         
                     
 
