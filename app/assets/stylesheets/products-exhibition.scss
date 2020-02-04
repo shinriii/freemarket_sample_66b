@@ -48,7 +48,17 @@
                 }
                 .image-box{
                     display: flex;
+                    height: 162px;
+                    width: 100%;
+                    .none{
+                        display: none;
+                    }
+                    .pic{
+                        display: block;
+                    }
+
                     .image-lists{
+                        display: flex;
                         .image-list{
                             display: none;
                             height: 100%;
@@ -79,20 +89,32 @@
                                 color: #0099e8;
                             }
                         }
+                        .edit-list{
+                            display:block;
+                        }
+                        .active{
+                            display: block;
+                        }
                     }
                     &__square {
+
                         height: 100%;
                         width: 100%;
                         background-color: #f5f5f5;
                         border: 1px dashed #ccc;
-                        padding: 50px 40px;
                         text-align: center;
                         font-size: 14px;
+
+                        pre{
+                            white-space:pre-wrap;
+                            word-wrap: break-word;
+                        }
                     }
                 }
                 input {
                     display: none;
                 }
+
                 p.column {
                     font-size: 14px;
                     margin-top: 5px;

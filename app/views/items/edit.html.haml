@@ -16,13 +16,19 @@
                     %p.column 最大10枚までアップロードできます
                     %label.image-box
                         %ul.image-lists
+                            - @item.images.each do |image|
+                                %li.image-list.edit-list
+                                    .image
+                                        = image_tag image.src.url
+                                    .image-destroy
+                                        削除
 
                         = f.fields_for :images ,class: "filefield" do |i|
                             .image-box__square.pic.none#up-load
-                                ドラッグアンドドロップ
-                                %br/
-                                またはクリックしてファイルをアップロード
-                                = i.file_field :src,id: "image-form"
+                                %pre ドラッグアンドドロップ
+                                %pre またはクリックしてファイルをアップロード
+                                = i.file_field :src,id: "image-form",required: "true"
+                        
                         
                     
 
@@ -119,7 +125,7 @@
                             また、出品をもちまして
                             = link_to '' "加盟店規約"
                             に同意したことになります。
-                            = f.submit :"出品する", class:"exhibition"
+                            = f.submit :"編集する", class:"exhibition"
                             -# %button.exhibition{type:"submit", value:"/items"}
                             -#     出品する
 
