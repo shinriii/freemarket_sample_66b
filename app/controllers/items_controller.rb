@@ -38,7 +38,6 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
-    binding.pry
     if @item.save!
       redirect_to root_path
     else
@@ -49,7 +48,6 @@ class ItemsController < ApplicationController
   def show
     @item = Item.includes(:images).find(params[:item_id])
     @items = Item.find(params[:item_id])
-    # binding.pry
   end
 
   private
