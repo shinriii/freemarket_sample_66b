@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_03_021131) do
+ActiveRecord::Schema.define(version: 202002040230724) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2020_02_03_021131) do
     t.text "address", null: false
     t.string "building"
     t.bigint "phone_number"
-    t.integer "prefecture_id", null: false
+    t.string "prefecture", null: false
     t.string "city"
     t.bigint "user_id"
     t.datetime "created_at", null: false
@@ -74,6 +74,24 @@ ActiveRecord::Schema.define(version: 2020_02_03_021131) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "conditions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "delivery_burdens", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "delivery_days", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "src"
     t.bigint "item_id"
@@ -86,10 +104,10 @@ ActiveRecord::Schema.define(version: 2020_02_03_021131) do
     t.string "name"
     t.string "description"
     t.integer "price"
-    t.integer "condition_id"
-    t.integer "prefecture_id"
-    t.integer "delivery_days_id"
-    t.integer "delivery_burden_id"
+    t.bigint "condition_id"
+    t.bigint "prefecture"
+    t.bigint "delivery_days_id"
+    t.bigint "delivery_burden_id"
     t.integer "parent_category_id"
     t.integer "child_category_id"
     t.bigint "user_id"
@@ -97,7 +115,17 @@ ActiveRecord::Schema.define(version: 2020_02_03_021131) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_items_on_category_id"
+    t.index ["condition_id"], name: "index_items_on_condition_id"
+    t.index ["delivery_burden_id"], name: "index_items_on_delivery_burden_id"
+    t.index ["delivery_days_id"], name: "index_items_on_delivery_days_id"
+    t.index ["prefecture"], name: "index_items_on_prefecture"
     t.index ["user_id"], name: "index_items_on_user_id"
+  end
+
+  create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "sns_credentials", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -132,6 +160,10 @@ ActiveRecord::Schema.define(version: 2020_02_03_021131) do
   add_foreign_key "cards", "users"
   add_foreign_key "images", "items"
   add_foreign_key "items", "categories"
+  add_foreign_key "items", "conditions"
+  add_foreign_key "items", "delivery_burdens"
+  add_foreign_key "items", "delivery_days", column: "delivery_days_id"
+  add_foreign_key "items", "prefectures"
   add_foreign_key "items", "users"
   add_foreign_key "sns_credentials", "users"
 end

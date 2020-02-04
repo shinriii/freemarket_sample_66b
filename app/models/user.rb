@@ -20,6 +20,11 @@ class User < ApplicationRecord
   has_many :sns_credentials
   has_many :items
   has_many :cards
+  has_one :condition
+  has_one :delivery_burden
+  has_one :delivery_day
+  has_one :prefecture
+
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create

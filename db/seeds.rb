@@ -24,6 +24,19 @@ birthday:'2020-1-1',
 email:'yama@gmail.com',
 password: 'yama123456'
 )
+Condition.create!(name:"新品、未使用")
+Condition.create(name:"未使用に近い")
+Condition.create(name:"目立った傷や汚れなし")
+Condition.create(name:"やや傷や汚れあり")
+Condition.create(name:"傷や汚れあり")
+Condition.create(name:"全体的に状態が悪い")
+
+DeliveryDay.create(name:"1~2日で発送")
+DeliveryDay.create(name:"2~3日で発送")
+DeliveryDay.create(name:"4~7日で発送")
+
+DeliveryBurden.create(name:"送料込み(出品者負担)")
+DeliveryBurden.create(name:"着払い(購入者負担)")
 
 Address.create!(
   address_firstname:'山田',
@@ -34,11 +47,10 @@ Address.create!(
   municipalities:'福岡市博多区',
   address:'1-1',
   phone_number:'08095551234',
-  prefecture_id:'1',
+  prefecture:'1',
   user_id:'1'
   )
 
-  
 
 lady = Category.create(name: "レディース")
 lady_1 = lady.children.create(name: "トップス")

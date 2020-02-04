@@ -4,10 +4,10 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.string :name
       t.string :description
       t.integer :price
-      t.integer :condition_id
-      t.integer :prefecture_id
-      t.integer :delivery_days_id
-      t.integer :delivery_burden_id
+      t.references :condition, foreign_key: true
+      t.references :prefecture, foreign_key: true
+      t.references :delivery_days, foreign_key: true
+      t.references :delivery_burden, foreign_key: true
       t.integer :parent_category_id
       t.integer :child_category_id
       t.references :user, foreign_key: true
