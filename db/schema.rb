@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 202002040230724) do
+ActiveRecord::Schema.define(version: 202002040230725) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -43,11 +43,12 @@ ActiveRecord::Schema.define(version: 202002040230724) do
     t.text "address", null: false
     t.string "building"
     t.bigint "phone_number"
-    t.string "prefecture", null: false
+    t.bigint "prefecture_id", null: false
     t.string "city"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["prefecture_id"], name: "index_addresses_on_prefecture_id"
     t.index ["user_id"], name: "index_addresses_on_user_id"
   end
 
@@ -105,7 +106,7 @@ ActiveRecord::Schema.define(version: 202002040230724) do
     t.string "description"
     t.integer "price"
     t.bigint "condition_id"
-    t.bigint "prefecture"
+    t.bigint "prefecture_id"
     t.bigint "delivery_days_id"
     t.bigint "delivery_burden_id"
     t.integer "parent_category_id"
@@ -118,7 +119,7 @@ ActiveRecord::Schema.define(version: 202002040230724) do
     t.index ["condition_id"], name: "index_items_on_condition_id"
     t.index ["delivery_burden_id"], name: "index_items_on_delivery_burden_id"
     t.index ["delivery_days_id"], name: "index_items_on_delivery_days_id"
-    t.index ["prefecture"], name: "index_items_on_prefecture"
+    t.index ["prefecture_id"], name: "index_items_on_prefecture_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -156,6 +157,7 @@ ActiveRecord::Schema.define(version: 202002040230724) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "addresses", "prefectures"
   add_foreign_key "addresses", "users"
   add_foreign_key "cards", "users"
   add_foreign_key "images", "items"

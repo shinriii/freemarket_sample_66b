@@ -23,7 +23,6 @@ class User < ApplicationRecord
   has_one :condition
   has_one :delivery_burden
   has_one :delivery_day
-  has_one :prefecture
 
 
   def self.from_omniauth(auth)
