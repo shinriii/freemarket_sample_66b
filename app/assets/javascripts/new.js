@@ -1,5 +1,22 @@
 $(document).on('turbolinks:load', function() {
-  console.log("Ok")
+  $(function(){
+      function readURL(input) {
+        if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+    $('#preview').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]);
+        }
+    }
+    $("#image-form").change(function(){
+      console.log(this)
+        readURL(this);
+        $(".image-list").css("display","block")
+    });
+  })
+});
+$(document).on('turbolinks:load', function() {
   $(function(){
     function appendOption(category){
       var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
@@ -25,7 +42,6 @@ $(document).on('turbolinks:load', function() {
     }
     // 親カテゴリー選択のイベント
     $('#parent-form').on('change', function(){
-      console.log("ok")
       var parentCategory = $('option:selected',this).val();
       if (parentCategory != "---"){
         $.ajax({
