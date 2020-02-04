@@ -37,26 +37,22 @@
               = @items.category.parent.name
               %br
               = @items.category.name
-          .product__item__main__detail__tbody__tr-3
-            .product__item__main__detail__tbody__tr-3__th ブランド
-            .product__item__main__detail__tbody__tr-3__td
-
           .product__item__main__detail__tbody__tr-4
             .product__item__main__detail__tbody__tr-4__th 商品の状態
-            .product__item__main__detail__tbody__tr-4__td 目立った傷や汚れなし
+            .product__item__main__detail__tbody__tr-4__td 
+              = @items.condition.name
           .product__item__main__detail__tbody__tr-5
             .product__item__main__detail__tbody__tr-5__th 配送料の負担
-            .product__item__main__detail__tbody__tr-5__td 送料込み(出品者負担)
-          .product__item__main__detail__tbody__tr-6
-            .product__item__main__detail__tbody__tr-6__th 配送の方法
-            .product__item__main__detail__tbody__tr-6__td らくらくメルカリ便
+            .product__item__main__detail__tbody__tr-5__td 
+              = @items.delivery_burden.name
           .product__item__main__detail__tbody__tr-7
             .product__item__main__detail__tbody__tr-7__th 配送元地域
             .product__item__main__detail__tbody__tr-7__td
-
+              = @items.prefecture.name
           .product__item__main__detail__tbody__tr-8
             .product__item__main__detail__tbody__tr-8__th 発送日の目安
-            .product__item__main__detail__tbody__tr-8__td 4日~7日で発送
+            .product__item__main__detail__tbody__tr-8__td 
+              = @items.delivery_day.name
 
     .product__item__price-box
       %span.product__item__price-box__price 

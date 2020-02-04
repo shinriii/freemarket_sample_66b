@@ -57,7 +57,7 @@
                         .all__main__contents__details__right-box__condition
                             商品の状態
                             %span 必須
-                        = f.collection_select :condition_id, Condition.all, :id, :value, prompt:"---"
+                        = f.collection_select :condition_id, Condition.all,:id,:name,prompt:"---"
 
                 .all__main__contents__delivery
                     .all__main__contents__delivery__left-box
@@ -67,17 +67,17 @@
                         .all__main__contents__delivery__right-box__burden
                             配送料の負担
                             %span 必須
-                            = f.collection_select :delivery_burden_id, DeliveryBurden.all, :id, :value, prompt:"---"
+                            = f.collection_select :delivery_burden_id, DeliveryBurden.all, :id,:name, prompt:"---"
                         
                         .all__main__contents__delivery__right-box__prefectures
                             発送元の地域
                             %span 必須
-                            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt:"---"
+                            = f.collection_select :prefecture_id, Prefecture.all, :id,:name, prompt:"---"
 
                         .all__main__contents__delivery__right-box__dates
                             発送までの日数
                             %span 必須
-                            = f.collection_select :delivery_days_id, DeliveryDays.all, :id, :value, prompt:"---"
+                            = f.collection_select :delivery_day_id, DeliveryDay.all,:id,:name, prompt:"---"
 
                 .all__main__contents__prices
                     .all__main__contents__prices__left-box

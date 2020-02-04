@@ -4,7 +4,7 @@ class Item < ApplicationRecord
     validates :price, presence: true
     validates :condition_id, presence: true
     validates :prefecture_id, presence: true
-    validates :delivery_days_id, presence: true
+    validates :delivery_day_id, presence: true
     validates :delivery_burden_id, presence: true
     validates :parent_category_id, presence: true
     validates :child_category_id, presence: true
@@ -14,4 +14,9 @@ class Item < ApplicationRecord
     has_many :images
     accepts_nested_attributes_for :images
     belongs_to :category
+    belongs_to :condition
+    belongs_to :delivery_burden
+    belongs_to :delivery_day
+
+    belongs_to :prefecture
 end

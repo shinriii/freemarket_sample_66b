@@ -37,7 +37,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @item = Item.new(item_params)
     if @item.save!
       redirect_to root_path
@@ -49,12 +48,11 @@ class ItemsController < ApplicationController
   def show
     @item = Item.includes(:images).find(params[:item_id])
     @items = Item.find(params[:item_id])
-    
   end
 
   private
   def item_params
-    params.require(:item).permit(:name, :description, :price, :condition_id, :prefecture_id, :delivery_days_id, :delivery_burden_id, :parent_category_id, :child_category_id, :category_id, images_attributes: [:src]).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :description, :price, :condition_id, :prefecture_id, :delivery_day_id, :delivery_burden_id, :parent_category_id, :child_category_id, :category_id, images_attributes: [:src]).merge(user_id: current_user.id)
   end
   
 end
