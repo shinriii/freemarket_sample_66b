@@ -15,21 +15,21 @@
 #             %option{value:"全体的に状態が悪い"} 全体的に状態が悪い
 
 User.create!(
-nickname:'ひの',
-firstname:'日野',
-lastname:'としひろ',
-kana_firstname:'ヒノ',
-kana_lastname:'トシヒロ',
+nickname:'太郎',
+firstname:'山田',
+lastname:'太郎',
+kana_firstname:'ヤマダ',
+kana_lastname:'タロウ',
 birthday:'2020-1-1',
-email:'hino@gmail.com',
-password: 'hino123456'
+email:'yama@gmail.com',
+password: 'yama123456'
 )
 
 Address.create!(
-  address_firstname:'日野',
-  address_lastname:'としひろ',
-  address_kana_firstname:'ヒノ',
-  address_kana_lastname:'トシヒロ',
+  address_firstname:'山田',
+  address_lastname:'太郎',
+  address_kana_firstname:'ヤマダ',
+  address_kana_lastname:'タロウ',
   zipcode:'888-4444',
   municipalities:'福岡市博多区',
   address:'1-1',
