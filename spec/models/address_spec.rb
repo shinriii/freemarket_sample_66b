@@ -38,9 +38,9 @@ describe Address do
     end
 
     it "is invalid without a prefectures" do
-      address = build(:address, prefecture_id: nil)
+      address = build(:address, prefecture: nil)
       address.valid?
-      expect(address.errors[:prefecture_id]).to include("を入力してください")
+      expect(address.errors[:prefecture]).to include("を入力してください")
     end
 
     it "is invalid without a municipalities" do

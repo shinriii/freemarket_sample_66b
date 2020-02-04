@@ -1,10 +1,8 @@
 class Address < ApplicationRecord
 
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :prefecture
-  delegate :name, to: :prefecture
-
     belongs_to :user, optional: true
+    belongs_to :prefecture
+    
     VALID_POSTAL_CODE = /\A\d{3}-\d{4}\z/i
     VALID_KATAKANA_REGEX = /\A[\p{katakana}\p{blank}ー－]+\z/
 

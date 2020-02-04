@@ -2,11 +2,11 @@
 
 
 one:
-  prefecture_id: 1
+  prefecture: 1
   city: MyString
 
 two:
-  prefecture_id: 1
+  prefecture: 1
   city: MyString
 
 # This model initially had no columns defined. If you add columns to the
