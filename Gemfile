@@ -91,3 +91,4 @@ gem 'turbolinks'
 gem "gretel"
 gem 'ancestry'
 gem 'turbolinks'
+gem 'fog-aws'
