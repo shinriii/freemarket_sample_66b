@@ -25,6 +25,15 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def  done
+    @item_purchaser= Item.find(params[:item_id])
+    if @item_purchaser.update( purchaser: current_user.id)
+      @item_purchaser.destroy
+    else
+      item_confirm_path(@item_purchaser.id)
+   end
+  end
+
   def new
     @item = Item.new
     @item.images.new
