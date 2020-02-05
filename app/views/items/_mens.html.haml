@@ -10,7 +10,7 @@
             .contents__items__main-box__items__list__link__box
               .contents__items__main-box__items__list__link__box__img-box
                 - mens.images.each do |image|
-                  = image_tag image.src.url
+                  = image_tag image.src.to_s
                 .contents__items__main-box__items__list__link__box__img-box__price-box
                   ¥
                   %span= mens.price

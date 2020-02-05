@@ -19,7 +19,7 @@
                             - @item.images.each do |image|
                                 %li.image-list.edit-list
                                     .image
-                                        = image_tag image.src.url
+                                        = image_tag image.src.to_s
                                     .image-destroy
                                         削除
 

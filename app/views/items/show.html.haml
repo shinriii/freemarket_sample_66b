@@ -6,10 +6,10 @@
     .product__item__main
       .product__item__main__photo
         - @item.images.each do |image|
-          = image_tag image.src.url, class:"inactive"
+          = image_tag image.src.to_s, class:"inactive"
       .product__item__main__photo__bottom
         - @item.images.each do |image|
-          = image_tag image.src.url, class:"small", width:"60", height:"60"
+          = image_tag image.src.to_s, class:"small", width:"60", height:"60"
 
 
       .product__item__main__detail

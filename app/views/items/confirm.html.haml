@@ -11,7 +11,7 @@
                 .all__main__contents__products__item-box
                     .all__main__contents__products__item-box__image
                         - @item.images.each do |image|
-                            = image_tag image.src.url
+                            = image_tag image.src.to_s
                     .all__main__contents__products__item-box__detail-box
                         .all__main__contents__products__item-box__detail-box__name
                             = @item.name
