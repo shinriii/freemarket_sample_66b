@@ -53,7 +53,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    
+    @child_number = @item.child_category_id
+    @child_category = Category.find(@child_number)
+    @child = @child_category.ancestry
+    @child_name = @child_category.name
+    @grandchild = @item.category.ancestry
+    @grandchild_name = @item.category.name
   end
 
   def update
