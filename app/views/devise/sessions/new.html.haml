@@ -6,10 +6,12 @@
         = link_to signup_index_path, class:'total__box__login__box' do
           %p アカウントをお持ちでない方はこちら
           .total__box__login__box__new 新規会員登録
-        .total__box__login__box-2
-          .total__box__login__box-2__btn-facebook
-            %i.total__box__login__box-2__btn-facebook.fab.fa-facebook-square
-            %p facebookでログイン
+        = link_to user_facebook_omniauth_authorize_path, method: :post do
+          .total__box__login__box-2
+            .total__box__login__box-2__btn-facebook
+              %i.total__box__login__box-2__btn-facebook.fab.fa-facebook-square
+              %p facebookでログイン
+        = link_to user_google_oauth2_omniauth_authorize_path, method: :post do
           .total__box__login__box-2__btn-google
             .total__box__login__box-2__btn-google__icon.fab.fa-google 
             %p Googleでログイン

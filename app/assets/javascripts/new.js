@@ -72,7 +72,7 @@ $(document).on('turbolinks:load', function() {
     // 子カテゴリーを表示するビュー
     function appendChidrenBox(insertHTML){
       var childSelectHtml = '';
-      childSelectHtml = `<select name='item[child_category_id]' class="select-default" id="child-form">
+      childSelectHtml = `<select name='item[child_category_id]' class="select-default" id="child-form" required>
                               <option label="---" data-category="---"></option>
                               ${insertHTML}
                             </select>`
@@ -81,7 +81,7 @@ $(document).on('turbolinks:load', function() {
     // 孫カテゴリーを表示するビュー
     function appendGrandchidrenBox(insertHTML){
       var grandchildSelectHtml = '';
-      grandchildSelectHtml = `<select name='item[category_id]' class="select-default" id="grandchild-form">
+      grandchildSelectHtml = `<select name='item[category_id]' class="select-default" id="grandchild-form" required>
                                   <option label="---" data-category="---"></option>
                                   ${insertHTML}
                                 </select>`;
