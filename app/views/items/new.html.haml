@@ -19,10 +19,10 @@
 
                         = f.fields_for :images ,class: "filefield" do |i|
                             .image-box__square.pic.none#up-load
-                                ドラッグアンドドロップ
-                                %br/
-                                またはクリックしてファイルをアップロード
-                                = i.file_field :src,id: "image-form"
+                                %pre 
+                                    ドラッグアンドドロップ
+                                    またはクリックしてファイルをアップロード
+                                = i.file_field :src,id: "image-form",required: "true"
                         
                     
 
@@ -30,12 +30,12 @@
                     .all__main__contents__products__name
                         商品名
                         %span 必須
-                        = f.text_field :name, placeholder: "商品名  (必須40文字まで)", class:"name-column"
+                        = f.text_field :name, placeholder: "商品名  (必須40文字まで)", class:"name-column",required: "true"
                 
                     .all__main__contents__products__description
                         商品の説明
                         %span 必須
-                        = f.text_area :description, placeholder:"商品の説明 (必須1,000文字以内)  (色、素材、重さ、定価、注意点など)    例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでオススメです。", class:"description-column"
+                        = f.text_area :description, placeholder:"商品の説明 (必須1,000文字以内)  (色、素材、重さ、定価、注意点など)    例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでオススメです。", class:"description-column",required: "true"
                     
                 .all__main__contents__details
                     .all__main__contents__details__left-box
@@ -45,13 +45,13 @@
                             .all__main__contents__details__right-box__category
                                 カテゴリー
                                 %span 必須
-                            = f.select :parent_category_id, Category.where(ancestry: nil).collect {|p| [ p.name, p.id, name:p.id ]},{prompt: "---"}, html_options = {class: "select-default", id: "parent-form"}
+                            = f.select :parent_category_id, Category.where(ancestry: nil).collect {|p| [ p.name, p.id, name:p.id ]},{prompt: "---"}, html_options = {class: "select-default", id: "parent-form",required: "true"}
 
 
                         .all__main__contents__details__right-box__condition
                             商品の状態
                             %span 必須
-                        = f.collection_select :condition_id, Condition.all,:id,:name,prompt:"---"
+                        = f.collection_select :condition_id, Condition.all,:id,:name,{prompt:"---"},{required: "true"}
 
                 .all__main__contents__delivery
                     .all__main__contents__delivery__left-box
@@ -61,17 +61,17 @@
                         .all__main__contents__delivery__right-box__burden
                             配送料の負担
                             %span 必須
-                            = f.collection_select :delivery_burden_id, DeliveryBurden.all, :id,:name, prompt:"---"
+                            = f.collection_select :delivery_burden_id, DeliveryBurden.all, :id,:name, {prompt:"---"},{required: "true"}
                         
                         .all__main__contents__delivery__right-box__prefectures
                             発送元の地域
                             %span 必須
-                            = f.collection_select :prefecture_id, Prefecture.all, :id,:name, prompt:"---"
+                            = f.collection_select :prefecture_id, Prefecture.all, :id,:name, {prompt:"---"},{required: "true"}
 
                         .all__main__contents__delivery__right-box__dates
                             発送までの日数
                             %span 必須
-                            = f.collection_select :delivery_day_id, DeliveryDay.all,:id,:name, prompt:"---"
+                            = f.collection_select :delivery_day_id, DeliveryDay.all,:id,:name, {prompt:"---"},{required: "true"}
 
                 .all__main__contents__prices
                     .all__main__contents__prices__left-box
@@ -84,7 +84,7 @@
                                 %span 必須
                             .all__main__contents__prices__right-box__top__right
                                 ¥
-                                = f.number_field :price, id:"price-input", placeholder:"                     例)300", class:"value"
+                                = f.number_field :price, id:"price-input", placeholder:"                     例)300", class:"value",required: "true",min: "300", max:"9999999"
                         .all__main__contents__prices__right-box__center
                             .all__main__contents__prices__right-box__center__left
                                 販売手数料(10%)

@@ -83,13 +83,12 @@
         }
       }
       &__box-2{
-        height: 181px;
         width: 456px;
-        padding: 32px 64px;
+        padding: 32px 64px 16px;
         &__btn-google{
           height: 50px;
           width: 328px;
-          margin: 16px 0 0;
+          margin: 0 auto;
           border: #979797 solid 1px;
           &__icon.fab.fa-google{
             font-size: 18px;
