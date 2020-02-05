@@ -1,6 +1,6 @@
 .all
     .all__header
-        = link_to '/' do
+        = link_to root_path do
             = image_tag  "/fmarket_logo_red.svg", class:"header-picture"
     = form_with(model:@item, local: true) do |f|     
         .all__main
@@ -31,14 +31,11 @@
                         商品名
                         %span 必須
                         = f.text_field :name, placeholder: "商品名  (必須40文字まで)", class:"name-column"
-                    
-                    -# %input.name-column{type:"text", placeholder:"商品名  (必須40文字まで)"}
+                
                     .all__main__contents__products__description
                         商品の説明
                         %span 必須
                         = f.text_area :description, placeholder:"商品の説明 (必須1,000文字以内)  (色、素材、重さ、定価、注意点など)    例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでオススメです。", class:"description-column"
-
-                    -# %textarea.description-column{placeholder:"商品の説明 (必須1,000文字いない)  (色、素材、重さ、定価、注意点など) 例)        2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでオススメです。"}
                     
                 .all__main__contents__details
                     .all__main__contents__details__left-box
@@ -49,9 +46,6 @@
                                 カテゴリー
                                 %span 必須
                             = f.select :parent_category_id, Category.where(ancestry: nil).collect {|p| [ p.name, p.id, name:p.id ]},{prompt: "---"}, html_options = {class: "select-default", id: "parent-form"}
-
-                        -# = f.select :child_category_id, Category.where(ancestry: nil).collect {|p| [ p.name, p.id, name:p.id ]},{prompt: "---"}, html_options = {class: "select-default", id: "child-form"}
-                        -# = f.select :grandchild_category_id, Category.where(ancestry: nil).collect {|p| [ p.name, p.id, name:p.id ]},{prompt: "---"}, html_options = {class: "select-default", id: "grandchild-form"}
 
 
                         .all__main__contents__details__right-box__condition
@@ -91,7 +85,6 @@
                             .all__main__contents__prices__right-box__top__right
                                 ¥
                                 = f.number_field :price, id:"price-input", placeholder:"                     例)300", class:"value"
-                                -# %input.price{type:"text", placeholder:"                     例)300"}
                         .all__main__contents__prices__right-box__center
                             .all__main__contents__prices__right-box__center__left
                                 販売手数料(10%)
@@ -120,8 +113,6 @@
                             = link_to '' "加盟店規約"
                             に同意したことになります。
                             = f.submit :"出品する", class:"exhibition"
-                            -# %button.exhibition{type:"submit", value:"/items"}
-                            -#     出品する
 
                         %button.return{type:"submit", value:"#"}
                             もどる
