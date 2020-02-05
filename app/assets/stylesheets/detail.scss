@@ -272,6 +272,12 @@
       margin: 16px 0 0;
       &__photo{
         float: left;
+        .inactive{
+          display: none;
+        }
+        .active{
+          display: block;
+        }
         img{
           height: 300px;
           width: 300px;

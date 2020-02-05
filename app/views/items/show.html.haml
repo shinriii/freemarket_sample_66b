@@ -6,8 +6,11 @@
     .product__item__main
       .product__item__main__photo
         - @item.images.each do |image|
-          = image_tag image.src.url
-        .product__item__main__photo__bottom
+          = image_tag image.src.url, class:"inactive"
+      .product__item__main__photo__bottom
+        - @item.images.each do |image|
+          = image_tag image.src.url, class:"small", width:"60", height:"60"
+
 
       .product__item__main__detail
         .product__item__main__detail__tbody
@@ -65,6 +68,9 @@
     = link_to item_path(@item), method: :delete do
       .product__item__delete-btn
         削除する
+    = link_to edit_item_path(@item.id) do
+      .product__item__delete-btn
+        編集する
 
     .product__item__description
       %p.product__item__description__inner

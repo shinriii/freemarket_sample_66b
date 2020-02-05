@@ -16,13 +16,19 @@
                     %p.column 最大10枚までアップロードできます
                     %label.image-box
                         %ul.image-lists
+                            - @item.images.each do |image|
+                                %li.image-list.edit-list
+                                    .image
+                                        = image_tag image.src.url
+                                    .image-destroy
+                                        削除
 
                         = f.fields_for :images ,class: "filefield" do |i|
                             .image-box__square.pic.none#up-load
-                                ドラッグアンドドロップ
-                                %br/
-                                またはクリックしてファイルをアップロード
-                                = i.file_field :src,id: "image-form"
+                                %pre ドラッグアンドドロップ
+                                %pre またはクリックしてファイルをアップロード
+                                = i.file_field :src,id: "image-form",required: "true"
+                        
                         
                     
 
@@ -31,12 +37,11 @@
                         商品名
                         %span 必須
                         = f.text_field :name, placeholder: "商品名  (必須40文字まで)", class:"name-column"
-                
                     .all__main__contents__products__description
                         商品の説明
                         %span 必須
                         = f.text_area :description, placeholder:"商品の説明 (必須1,000文字以内)  (色、素材、重さ、定価、注意点など)    例)2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。合わせやすいのでオススメです。", class:"description-column"
-                    
+
                 .all__main__contents__details
                     .all__main__contents__details__left-box
                         %p 商品の詳細
@@ -46,7 +51,6 @@
                                 カテゴリー
                                 %span 必須
                             = f.select :parent_category_id, Category.where(ancestry: nil).collect {|p| [ p.name, p.id, name:p.id ]},{prompt: "---"}, html_options = {class: "select-default", id: "parent-form"}
-
 
                         .all__main__contents__details__right-box__condition
                             商品の状態
@@ -112,7 +116,7 @@
                             また、出品をもちまして
                             = link_to '' "加盟店規約"
                             に同意したことになります。
-                            = f.submit :"出品する", class:"exhibition"
+                            = f.submit :"編集する", class:"exhibition"
 
                         %button.return{type:"submit", value:"#"}
                             もどる
