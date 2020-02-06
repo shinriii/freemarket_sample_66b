@@ -25,6 +25,15 @@ class ItemsController < ApplicationController
     redirect_to root_path
   end
 
+  def  done
+    @item_purchaser= Item.find(params[:item_id])
+    if @item_purchaser.update( purchaser: current_user.id)
+      @item_purchaser.destroy
+    else
+      item_confirm_path(@item_purchaser.id)
+   end
+  end
+
   def new
     @item = Item.new
     @item.images.new
@@ -53,6 +62,12 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @child_number = @item.child_category_id
+    @child_category = Category.find(@child_number)
+    @child = @child_category.ancestry
+    @child_name = @child_category.name
+    @grandchild = @item.category.ancestry
+    @grandchild_name = @item.category.name
   end
 
   def update

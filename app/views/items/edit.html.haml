@@ -25,8 +25,9 @@
 
                         = f.fields_for :images ,class: "filefield" do |i|
                             .image-box__square.pic.none#up-load
-                                %pre ドラッグアンドドロップ
-                                %pre またはクリックしてファイルをアップロード
+                                %pre 
+                                    ドラッグアンドドロップ
+                                    またはクリックしてファイルをアップロード
                                 = i.file_field :src,id: "image-form",required: "true"
                         
                         
@@ -51,6 +52,8 @@
                                 カテゴリー
                                 %span 必須
                             = f.select :parent_category_id, Category.where(ancestry: nil).collect {|p| [ p.name, p.id, name:p.id ]},{prompt: "---"}, html_options = {class: "select-default", id: "parent-form"}
+                            = f.select :child_category_id, Category.where(ancestry: @child).collect {|p| [ p.name, p.id, name:p.id ]},{prompt: @child_name}, html_options = {class: "select-default", id: "child-form"}
+                            = f.select :grandchild_category_id, Category.where(ancestry: @grandchild).collect {|p| [ p.name, p.id, name:p.id ]},{prompt: @grandchild_name}, html_options = {class: "select-default", id: "grandchild-form"}
 
                         .all__main__contents__details__right-box__condition
                             商品の状態

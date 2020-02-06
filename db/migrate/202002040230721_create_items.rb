@@ -10,6 +10,7 @@ class CreateItems < ActiveRecord::Migration[5.2]
       t.references :delivery_burden, foreign_key: true
       t.integer :parent_category_id
       t.integer :child_category_id
+      t.integer :purchaser
       t.references :user, foreign_key: true
       t.references :category, foreign_key: true
       t.timestamps

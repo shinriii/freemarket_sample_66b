@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 202002040230725) do
     t.bigint "delivery_burden_id"
     t.integer "parent_category_id"
     t.integer "child_category_id"
+    t.integer "purchaser"
     t.bigint "user_id"
     t.bigint "category_id"
     t.datetime "created_at", null: false
@@ -125,6 +126,11 @@ ActiveRecord::Schema.define(version: 202002040230725) do
 
   create_table "prefectures", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "purchasers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,9 +1,11 @@
 .main1 {
     background-color: #eeeeee;
     width: 100vw;
+    max-width: 1020px;
     height: 100%;
-    padding: 40px 200px;
+    margin: 40px auto;
     display: flex;
+    justify-content: space-between;
     .side-bar {
         width: 280px;
         height: 100%;
