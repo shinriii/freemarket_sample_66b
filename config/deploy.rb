@@ -21,6 +21,13 @@ set :ssh_options, auth_methods: ['publickey'],
 # プロセス番号を記載したファイルの場所
 set :unicorn_pid, -> { "#{shared_path}/tmp/pids/unicorn.pid" }
 
+set :default_env, {
+  rbenv_root: "/usr/local/rbenv",
+  path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
+  aws_access_key_id: Rails.application.secrets.aws_access_key_id,
+  aws_secret_access_key: Rails.application.secrets.aws_secret_access_key,
+}
+
 # Unicornの設定ファイルの場所
 set :unicorn_config_path, -> { "#{current_path}/config/unicorn.rb" }
 set :keep_releases, 5
