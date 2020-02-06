@@ -12,10 +12,10 @@ CarrierWave.configure do |config|
       provider: 'AWS',
       aws_access_key_id: Rails.application.credentials.aws[:access_key_id],
       aws_secret_access_key: Rails.application.credentials.aws[:secret_access_key],
-      region: 'your_region' # 東京はap-northeast-1
+      region: 'ap-northeast-1' # 東京はap-northeast-1
     }
     config.fog_directory  = 'freemarket-sample66b' #S3のバケット名
-    config.asset_host = 'https://s3-your_region.amazonaws.com/freemarket-sample66b'
+    config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/freemarket-sample66b'
   else
     config.storage :file # 開発環境:public/uploades下に保存
     config.enable_processing = false if Rails.env.test? #test:処理をスキップ
