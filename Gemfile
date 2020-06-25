@@ -69,7 +69,7 @@ gem 'carrierwave'
 gem 'fog-aws'
 gem 'pry-rails'
 gem 'bootsnap'
-gem 'rack', '~> 2.0.8'
+gem 'rack', '~> 2.1.4'
 
 group :production do
   gem 'unicorn', '5.4.1'
